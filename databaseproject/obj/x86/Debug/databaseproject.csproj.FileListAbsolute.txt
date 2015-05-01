@@ -1,0 +1,16 @@
+C:\ABB\wpf\databaseproject\obj\x86\Debug\databaseproject.csprojResolveAssemblyReference.cache
+C:\ABB\wpf\databaseproject\obj\x86\Debug\MainWindow.baml
+C:\ABB\wpf\databaseproject\obj\x86\Debug\MainWindow.g.cs
+C:\ABB\wpf\databaseproject\obj\x86\Debug\App.g.cs
+C:\ABB\wpf\databaseproject\obj\x86\Debug\databaseproject_MarkupCompile.cache
+C:\ABB\wpf\databaseproject\obj\x86\Debug\databaseproject.g.resources
+C:\ABB\wpf\databaseproject\obj\x86\Debug\databaseproject.Properties.Resources.resources
+C:\ABB\wpf\databaseproject\obj\x86\Debug\databaseproject.csproj.GenerateResource.Cache
+C:\ABB\wpf\databaseproject\bin\Debug\databaseproject.exe
+C:\ABB\wpf\databaseproject\bin\Debug\databaseproject.pdb
+C:\ABB\wpf\databaseproject\bin\Debug\sql1.exe
+C:\ABB\wpf\databaseproject\bin\Debug\sql1.pdb
+C:\ABB\wpf\databaseproject\obj\x86\Debug\databaseproject.exe
+C:\ABB\wpf\databaseproject\obj\x86\Debug\databaseproject.pdb
+C:\ABB\wpf\databaseproject\obj\x86\Debug\signup_form.baml
+C:\ABB\wpf\databaseproject\obj\x86\Debug\signup_form.g.cs
