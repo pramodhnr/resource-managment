@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
 
+
 namespace databaseproject
 {
     /// <summary>
@@ -29,12 +30,16 @@ namespace databaseproject
 
         private void button_login_Click(object sender, RoutedEventArgs e)
         {
+            
+            
             try
             {
+                string login_username = textBox_username.ToString();
+                string login_password = passwordBox_password.ToString();
                 utilities.openConnection();
-                MySqlCommand selectcommand = new MySqlCommand("select * from database.login where username='" + textBox_username.Text + "' and password='" + passwordBox_password.Password + "' ;", utilities.connection);
+                MySqlCommand command = new MySqlCommand("select * from schema1.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", utilities.connection);
                 MySqlDataReader myreader;
-                myreader = selectcommand.ExecuteReader();
+                myreader = command.ExecuteReader();
                 int count = 0;
                 while (myreader.Read())
                 {

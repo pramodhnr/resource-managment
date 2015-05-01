@@ -16,26 +16,10 @@ namespace databaseproject
         {
             try
             {
-                connectionString = "datasource=localhost;port=3306;username=root;password=root";
-                connection = new MySqlConnection(connectionString);
-                //MySqlCommand selectcommand = new MySqlCommand("select * from database.login where username='" + textBox_username.Text + "' and password='" + passwordBox_password.Password + "')", myconn);
-                //MySqlDataReader myreader;
+                string connectionString = "datasource=localhost;port=3306;username=root;password=root";
+                MySqlConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
-                //myreader = selectcommand.ExecuteReader();
-                //int count = 0;
-                //while (myreader.Read())
-                //{
-                //    count += 1;
-                //}
-                //if (count == 1)
-                //{
-                //    MessageBox.Show("correct");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("incorrect");
-                //}
-               
+                
             }
             catch (Exception ex)
             {
