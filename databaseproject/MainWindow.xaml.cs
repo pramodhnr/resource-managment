@@ -30,21 +30,25 @@ namespace databaseproject
             {
                 ComboBox signup_manager = comboBox_signup_manager;
                 utilities.openConnection();
-                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1 order by name asc;",utilities.connection);
+                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1 order by name asc;", utilities.connection);
                 //comm.Connection = utilities.connection;
                 MySqlDataReader reader;
                 reader = comm.ExecuteReader();
                 while (reader.Read())
                 {
-                    signup_manager.Items.Add(reader.GetValue(0).ToString());
+                    signup_manager.Items.Add(reader[0].ToString());
                 }
                 reader.Close();
-                utilities.closeConnection();
+                // utilities.closeConnection();
             }
             catch (Exception ex4)
             {
                 MessageBox.Show(ex4.Message + "ex4");
                 Console.WriteLine(ex4.StackTrace);
+            }
+            finally
+            {
+                utilities.closeConnection();
             }
         }
 
@@ -58,7 +62,7 @@ namespace databaseproject
                 string login_username = textBox_username.Text;
                 string login_password = passwordBox_password.Password;
 
-                utilities.openConnection();
+                //utilities.openConnection();
                 MySqlCommand command = new MySqlCommand("select * from schema1.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", utilities.connection);
                 MySqlDataReader myreader;
                 myreader = command.ExecuteReader();
@@ -75,7 +79,7 @@ namespace databaseproject
                 {
                     MessageBox.Show("incorrect");
                 }
-                utilities.closeConnection();
+                //utilities.closeConnection();
 
          }
             catch (Exception ex)
@@ -100,7 +104,7 @@ namespace databaseproject
 
             try
             {
-                utilities.openConnection();
+                //utilities.openConnection();
                 MySqlDataReader reader1, reader2;
                 // MessageBox.Show(manager_selected);
                 MySqlCommand fetch_manager_id = new MySqlCommand("select * from schema1.login where name='" + signup_manager + "'", utilities.connection);
@@ -120,7 +124,7 @@ namespace databaseproject
                 reader2.Read();
                 MessageBox.Show("Successfully inserted");
                 reader2.Close();
-                utilities.closeConnection();
+                //utilities.closeConnection();
             }
             catch (Exception ex2)
             {

@@ -3,6 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="profile" Height="325" Width="628">
     <Grid>
-        <ComboBox Height="22" HorizontalAlignment="Left" Margin="134,7,0,0" Name="comboBox_profile_resources" VerticalAlignment="Top" Width="260" Visibility="Hidden" />
+        <ComboBox Height="22" HorizontalAlignment="Left" Margin="134,7,0,0" Name="comboBox_profile_resources" VerticalAlignment="Top" Width="260" Visibility="Hidden" SelectionChanged="comboBox_profile_resources_SelectionChanged" />
+        <Label Content="Name" Height="22" HorizontalAlignment="Left" Margin="44,76,0,0" Name="label1" VerticalAlignment="Top" Width="100" />
+        <Label Content="Email" Height="22" HorizontalAlignment="Left" Margin="44,120,0,0" Name="label2" VerticalAlignment="Top" Width="100" />
+        <Label Content="Work Hours" Height="22" HorizontalAlignment="Left" Margin="44,156,0,0" Name="label3" VerticalAlignment="Top" Width="100" />
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="176,77,0,0" Name="profile_name" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="176,120,0,0" Name="profile_email" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="176,156,0,0" Name="profile_work_hours" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
+        <Button Content="Change Password" Height="25" HorizontalAlignment="Left" Margin="480,5,0,0" Name="profile_change_password" VerticalAlignment="Top" Width="117" />
+        <Image Height="16" HorizontalAlignment="Left" Margin="308,76,0,0" Name="profile_name_edit" Stretch="Fill" VerticalAlignment="Top" Width="16" Source="/databaseproject;component/Resources/Text-Edit-icon.png" ImageFailed="profile_name_edit_ImageFailed" />
+        <Image Height="16" HorizontalAlignment="Left" Margin="308,120,0,0" Name="profile_email_edit" Stretch="Fill" VerticalAlignment="Top" Width="16" Source="/databaseproject;component/Resources/Text-Edit-icon.png" ImageFailed="profile_email_edit_ImageFailed" />
+        <Image Height="16" HorizontalAlignment="Left" Margin="308,156,0,0" Name="profile_work_hours_edit" Stretch="Fill" VerticalAlignment="Top" Width="16" Source="/databaseproject;component/Resources/Text-Edit-icon.png" ImageFailed="profile_work_hours_edit_ImageFailed" />
     </Grid>
 </Window>
