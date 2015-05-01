@@ -28,7 +28,7 @@ namespace databaseproject
             InitializeComponent();
             try
             {
-                string signup_manager = comboBox_signup_manager.SelectedItem.ToString();
+                ComboBox signup_manager = comboBox_signup_manager;
                 utilities.openConnection();
                 MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1;", utilities.connection);
 
@@ -36,14 +36,15 @@ namespace databaseproject
                 reader = comm.ExecuteReader();
                 while (reader.Read())
                 {
-                    signup_manager.Insert(signup_manager.Length - 1, reader.GetValue(0).ToString());
+                    signup_manager.Items.Add(reader.GetValue(0).ToString());
                 }
                 reader.Close();
                 utilities.closeConnection();
             }
             catch (Exception ex4)
             {
-                MessageBox.Show(ex4.Message);
+                MessageBox.Show(ex4.Message + "ex4");
+                Console.WriteLine(ex4.StackTrace);
             }
         }
 
@@ -79,7 +80,8 @@ namespace databaseproject
          }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "ex");
+                Console.WriteLine(ex.StackTrace);
             }
         }
 
@@ -122,7 +124,8 @@ namespace databaseproject
             }
             catch (Exception ex2)
             {
-                MessageBox.Show(ex2.Message);
+                MessageBox.Show(ex2.Message + "ex2");
+                Console.WriteLine(ex2.StackTrace);
             }
         }
     }
