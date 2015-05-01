@@ -34,8 +34,8 @@ namespace databaseproject
             
             try
             {
-                string login_username = textBox_username.ToString();
-                string login_password = passwordBox_password.ToString();
+                string login_username = textBox_username.Text.ToString();
+                string login_password = passwordBox_password.Password.ToString();
                 utilities.openConnection();
                 MySqlCommand command = new MySqlCommand("select * from schema1.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", utilities.connection);
                 MySqlDataReader myreader;
@@ -67,9 +67,9 @@ namespace databaseproject
         private void button_signup_register_Click(object sender, RoutedEventArgs e)
         {
 
-            string signup_username = textBox_signup_username.ToString();
-            string signup_password = textBox_signup_password.ToString();
-            string signup_email = textBox_signup_email.ToString();
+            string signup_username = textBox_signup_username.Text.ToString();
+            string signup_password = passwordBox1.Password;
+            string signup_email = textBox_signup_email.Text.ToString();
             string signup_manager = comboBox_signup_manager.SelectedItem.ToString();
 
 
