@@ -17,7 +17,7 @@ namespace databaseproject
 {
     /// <summary>
     /// Interaction logic for signup_form.xaml
-    /// </summary>
+    /// </summkkary>
     public partial class signup_form : Window
     {
         public signup_form()
@@ -29,16 +29,13 @@ namespace databaseproject
         {
             try
             {
-                MySqlCommand insertCommand = utilities.connection.CreateCommand();
-                insertCommand.CommandText = "INSERT INTO `database`.`login` (`username`, `password`, `First name`, `Last name`, `Employee id`) VALUES ('" + textBox_username.Text + "', '" + passwordBox_password.Password + "', '" + textBox_firstname.Text + "', '" + textBox_lastname.Text + "', '" + textBox_employeeid.Text + "'";
                 utilities.openConnection();
-                
-               //  MySqlCommand insertCommand=new MySqlCommand("INSERT INTO `database`.`login` (`username`, `password`, `First name`, `Last name`, `Employee id`) VALUES ('"+textBox_username.Text+"', '"+passwordBox_password.Password+"', '"+textBox_firstname.Text+"', '"+textBox_lastname.Text+"', '"+textBox_employeeid.Text+"'",utilities.connection);
+                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO `database`.`login` (`username`, `password`, `First name`, `Last name`, `Employee id`) VALUES ('" + textBox_username.Text + "', '" + passwordBox_password.Password + "', '" + textBox_firstname.Text + "', '" + textBox_lastname.Text + "', '" + textBox_employeeid.Text + "');", utilities.connection);
                 insertCommand.ExecuteNonQuery();
                 utilities.closeConnection();
                 MessageBox.Show("created");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
