@@ -16,10 +16,9 @@
         <TabItem Header="Signup" Name="Signup">
             <Grid>
                 <TextBox Height="31" HorizontalAlignment="Left" Margin="222,33,0,0" Name="textBox_signup_username" VerticalAlignment="Top" Width="131" />
-<<<<<<< HEAD
+
                 <PasswordBox Height="31" HorizontalAlignment="Left" Margin="222,82,0,0" Name="textBox_signup_password" VerticalAlignment="Top" Width="131" />
-=======
->>>>>>> origin/master
+
                 <TextBox Height="31" HorizontalAlignment="Left" Margin="222,136,0,0" Name="textBox_signup_email" VerticalAlignment="Top" Width="131" />
                 <ComboBox Height="33" HorizontalAlignment="Left" Margin="222,188,0,0" Name="comboBox_signup_manager" VerticalAlignment="Top" Width="131" />
                 <Button Content="Register" Height="31" HorizontalAlignment="Left" Margin="152,241,0,0" Name="button_signup_register" VerticalAlignment="Top" Width="107" Click="button_signup_register_Click" />
@@ -27,7 +26,7 @@
                 <TextBlock Height="27" HorizontalAlignment="Left" Margin="70,82,0,0" Name="textBlock2" Text="Password" VerticalAlignment="Top" Width="100" />
                 <TextBlock Height="27" HorizontalAlignment="Left" Margin="70,136,0,0" Name="textBlock3" Text="Email" VerticalAlignment="Top" Width="100" />
                 <TextBlock Height="27" HorizontalAlignment="Left" Margin="70,188,0,0" Name="textBlock4" Text="Manager" VerticalAlignment="Top" Width="100" />
-                <PasswordBox Height="23" HorizontalAlignment="Left" Margin="222,86,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="131" />
+                
             </Grid>
         </TabItem>
     </TabControl>
