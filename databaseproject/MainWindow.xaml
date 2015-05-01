@@ -8,12 +8,23 @@
         <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="102,77,0,0" Name="label_username" VerticalAlignment="Top" />
         <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="102,0,0,124" Name="label_password" VerticalAlignment="Bottom" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="218,77,0,0" Name="textBox_username" VerticalAlignment="Top" Width="120" />
-        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="211,201,0,0" Name="button_login" VerticalAlignment="Top" Width="75" Click="button_login_Click" />
-                <PasswordBox Height="23" HorizontalAlignment="Left" Margin="218,140,0,0" Name="passwordBox_password" VerticalAlignment="Top" Width="120" />
-    </Grid>
+        
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="218,140,0,0" Name="passwordBox_password" VerticalAlignment="Top" Width="120" />
+                <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="211,201,0,0" Name="button_login" VerticalAlignment="Top" Width="75" Click="button_login_Click" />
+            </Grid>
 	</TabItem>
         <TabItem Header="Signup" Name="Signup">
-            <Grid />
+            <Grid>
+                <TextBox Height="31" HorizontalAlignment="Left" Margin="222,33,0,0" Name="textBox_signup_username" VerticalAlignment="Top" Width="131" />
+                <TextBox Height="31" HorizontalAlignment="Left" Margin="222,82,0,0" Name="textBox_signup_password" VerticalAlignment="Top" Width="131" />
+                <TextBox Height="31" HorizontalAlignment="Left" Margin="222,136,0,0" Name="textBox_signup_email" VerticalAlignment="Top" Width="131" />
+                <ComboBox Height="33" HorizontalAlignment="Left" Margin="222,188,0,0" Name="comboBox_signup_manager" VerticalAlignment="Top" Width="131" />
+                <Button Content="Register" Height="31" HorizontalAlignment="Left" Margin="152,241,0,0" Name="button_signup_register" VerticalAlignment="Top" Width="107" Click="button_signup_register_Click" />
+                <TextBlock Height="27" HorizontalAlignment="Left" Margin="70,36,0,0" Name="textBlock1" Text="Username" VerticalAlignment="Top" Width="100" />
+                <TextBlock Height="27" HorizontalAlignment="Left" Margin="70,82,0,0" Name="textBlock2" Text="Password" VerticalAlignment="Top" Width="100" />
+                <TextBlock Height="27" HorizontalAlignment="Left" Margin="70,136,0,0" Name="textBlock3" Text="Email" VerticalAlignment="Top" Width="100" />
+                <TextBlock Height="27" HorizontalAlignment="Left" Margin="70,188,0,0" Name="textBlock4" Text="Manager" VerticalAlignment="Top" Width="100" />
+            </Grid>
         </TabItem>
     </TabControl>
 

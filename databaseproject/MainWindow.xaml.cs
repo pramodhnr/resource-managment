@@ -62,10 +62,45 @@ namespace databaseproject
             }
         }
 
-        private void button_signup_Click(object sender, RoutedEventArgs e)
+       
+
+        private void button_signup_register_Click(object sender, RoutedEventArgs e)
         {
-            signup_form _signupform = new signup_form();
-            _signupform.ShowDialog();
+
+            string signup_username = textBox_signup_username.ToString();
+            string signup_password = textBox_signup_password.ToString();
+            string signup_email = textBox_signup_email.ToString();
+            string signup_manager = comboBox_signup_manager.SelectedItem.ToString();
+
+
+            try
+            {
+                utilities.openConnection();
+                MySqlDataReader reader1, reader2;
+                // MessageBox.Show(manager_selected);
+                MySqlCommand fetch_manager_id = new MySqlCommand("select * from schema1.login where name='" + signup_manager + "'", utilities.connection);
+                
+                reader1 = fetch_manager_id.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    // MessageBox.Show(reader1.GetValue(0).ToString());
+                }
+
+                string managerid = reader1.GetValue(0).ToString();
+                reader1.Close();
+                MySqlCommand insertnew = new MySqlCommand("insert into schema1.login(name,user_password,email,manager_id,is_manager) values ('" + signup_username + "',sha1('" + signup_password + "'),'" + signup_email + "','" + managerid + "',0);", utilities.connection);
+
+                reader2 = insertnew.ExecuteReader();
+                reader2.Read();
+                MessageBox.Show("Successfully inserted");
+                reader2.Close();
+                utilities.closeConnection();
+            }
+            catch (Exception ex2)
+            {
+                MessageBox.Show(ex2.Message);
+            }
         }
     }
 }
