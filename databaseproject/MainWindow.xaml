@@ -16,7 +16,7 @@
         <TabItem Header="Signup" Name="Signup">
             <Grid>
                 <TextBox Height="31" HorizontalAlignment="Left" Margin="222,33,0,0" Name="textBox_signup_username" VerticalAlignment="Top" Width="131" />
-                <TextBox Height="31" HorizontalAlignment="Left" Margin="222,82,0,0" Name="textBox_signup_password" VerticalAlignment="Top" Width="131" />
+                <PasswordBox Height="31" HorizontalAlignment="Left" Margin="222,82,0,0" Name="textBox_signup_password" VerticalAlignment="Top" Width="131" />
                 <TextBox Height="31" HorizontalAlignment="Left" Margin="222,136,0,0" Name="textBox_signup_email" VerticalAlignment="Top" Width="131" />
                 <ComboBox Height="33" HorizontalAlignment="Left" Margin="222,188,0,0" Name="comboBox_signup_manager" VerticalAlignment="Top" Width="131" />
                 <Button Content="Register" Height="31" HorizontalAlignment="Left" Margin="152,241,0,0" Name="button_signup_register" VerticalAlignment="Top" Width="107" Click="button_signup_register_Click" />

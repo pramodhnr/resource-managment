@@ -16,7 +16,7 @@ namespace databaseproject
         {
             try
             {
-                string connectionString = "datasource=localhost;port=3306;username=root;password=root";
+                string connectionString = "datasource=localhost;port=3305;username=root;password=root";
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
                 

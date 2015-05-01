@@ -26,6 +26,25 @@ namespace databaseproject
         {
             
             InitializeComponent();
+            try
+            {
+                string signup_manager = comboBox_signup_manager.SelectedItem.ToString();
+                utilities.openConnection();
+                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1;", utilities.connection);
+
+                MySqlDataReader reader;
+                reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    signup_manager.Insert(signup_manager.Length - 1, reader.GetValue(0).ToString());
+                }
+                reader.Close();
+                utilities.closeConnection();
+            }
+            catch (Exception ex4)
+            {
+                MessageBox.Show(ex4.Message);
+            }
         }
 
         private void button_login_Click(object sender, RoutedEventArgs e)
@@ -34,8 +53,8 @@ namespace databaseproject
             
             try
             {
-                string login_username = textBox_username.ToString();
-                string login_password = passwordBox_password.ToString();
+                string login_username = textBox_username.Text;
+                string login_password = passwordBox_password.Password;
                 utilities.openConnection();
                 MySqlCommand command = new MySqlCommand("select * from schema1.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", utilities.connection);
                 MySqlDataReader myreader;
@@ -67,9 +86,9 @@ namespace databaseproject
         private void button_signup_register_Click(object sender, RoutedEventArgs e)
         {
 
-            string signup_username = textBox_signup_username.ToString();
-            string signup_password = textBox_signup_password.ToString();
-            string signup_email = textBox_signup_email.ToString();
+            string signup_username = textBox_signup_username.Text;
+            string signup_password = textBox_signup_password.Password;
+            string signup_email = textBox_signup_email.Text;
             string signup_manager = comboBox_signup_manager.SelectedItem.ToString();
 
 
