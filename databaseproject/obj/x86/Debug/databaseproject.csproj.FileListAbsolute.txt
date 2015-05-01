@@ -29,3 +29,5 @@ C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\De
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.g.resources
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.Properties.Resources.resources
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.csproj.GenerateResource.Cache
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.exe
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.pdb
