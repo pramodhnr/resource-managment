@@ -44,3 +44,5 @@ C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.g.resources
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.Properties.Resources.resources
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\databaseproject.csproj.GenerateResource.Cache
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.baml
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.g.cs

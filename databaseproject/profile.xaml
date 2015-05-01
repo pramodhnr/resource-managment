@@ -1,0 +1,8 @@
+﻿<Window x:Class="databaseproject.profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="profile" Height="325" Width="628">
+    <Grid>
+        <ComboBox Height="22" HorizontalAlignment="Left" Margin="134,7,0,0" Name="comboBox_profile_resources" VerticalAlignment="Top" Width="260" Visibility="Hidden" />
+    </Grid>
+</Window>

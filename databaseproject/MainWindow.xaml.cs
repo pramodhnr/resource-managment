@@ -30,8 +30,8 @@ namespace databaseproject
             {
                 ComboBox signup_manager = comboBox_signup_manager;
                 utilities.openConnection();
-                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1;", utilities.connection);
-
+                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1 order by name asc;",utilities.connection);
+                //comm.Connection = utilities.connection;
                 MySqlDataReader reader;
                 reader = comm.ExecuteReader();
                 while (reader.Read())
