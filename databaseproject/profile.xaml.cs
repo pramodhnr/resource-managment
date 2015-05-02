@@ -19,6 +19,11 @@ namespace databaseproject
     /// </summary>
     public partial class profile : Window
     {
+        TextBox profile_name_value;
+        TextBox profile_email_value;
+        TextBox profile_work_hours_value;
+
+        private string session_username;
         public profile()
         {
             InitializeComponent();
@@ -26,9 +31,12 @@ namespace databaseproject
         public profile(string username)
         {
             InitializeComponent();
-            
-            
 
+            profile_name_value = profile_name;
+            profile_email_value = profile_email;
+            profile_work_hours_value = profile_work_hours;
+
+            session_username = username;
             ComboBox profile_resources = comboBox_profile_resources;
             utilities.openConnection();
             MySqlCommand fetch_manager = new MySqlCommand("select is_manager,id from schema1.login where name='" + username + "';", utilities.connection);
@@ -60,28 +68,43 @@ namespace databaseproject
 
         private void comboBox_profile_resources_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            MySqlCommand select_resource = new MySqlCommand("select * from schema1.login where name ='" + comboBox_profile_resources.SelectedItem.ToString() + "';", utilities.connection);
+            MySqlDataReader reader ; 
+            reader = select_resource.ExecuteReader();
+            reader.Read();
+            profile_name_value.Text = reader[1].ToString();
+            profile_email_value.Text = reader[3].ToString();
+
 
         }
 
         private void profile_name_edit_ImageFailed(object sender, ExceptionRoutedEventArgs e)
         {
-            TextBox profile_name_value = profile_name;
-            profile_name_value.IsReadOnly = false;
             
+            profile_name_value.IsReadOnly = false;
+            this.Visibility = System.Windows.Visibility.Hidden;
+
+
         }
 
         private void profile_email_edit_ImageFailed(object sender, ExceptionRoutedEventArgs e)
         {
-            TextBox profile_email_value = profile_email;
-            profile_email_value.IsReadOnly = false;
             
+            profile_email_value.IsReadOnly = false;
+            this.Visibility = System.Windows.Visibility.Hidden;
         }
 
         private void profile_work_hours_edit_ImageFailed(object sender, ExceptionRoutedEventArgs e)
         {
-            TextBox profile_work_hours_value = profile_work_hours;
+            
             profile_work_hours_value.IsReadOnly = false;
+            this.Visibility = System.Windows.Visibility.Hidden;
+        }
 
+        private void profile_change_password_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl changepassword = new changePassword(session_username);
+            
         }
         
     }

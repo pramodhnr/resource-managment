@@ -73,7 +73,10 @@ namespace databaseproject
                 }
                 if (count == 1)
                 {
-                    MessageBox.Show("correct");
+                    //MessageBox.Show("correct");
+                    Window user_profile = new profile(myreader[1].ToString());
+                    this.Hide();
+                    user_profile.Show();
                 }
                 else
                 {
