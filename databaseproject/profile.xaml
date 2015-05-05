@@ -19,6 +19,6 @@
         <Image Height="16" HorizontalAlignment="Left" Margin="330,156,0,0" Name="image3" Source="/databaseproject;component/Resources/check-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
         <Image Height="16" HorizontalAlignment="Left" Margin="352,76,0,0" Name="image4" Source="/databaseproject;component/Resources/no-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
         <Image Height="16" HorizontalAlignment="Left" Margin="352,120,0,0" Name="image5" Source="/databaseproject;component/Resources/no-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="352,156,0,0" Name="image6" Source="/databaseproject;component/Resources/no-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
+        <Image Height="16" HorizontalAlignment="Left" Margin="352,156,0,0" Name="image6" Source="/databaseproject;component/Resources/no-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" />
     </Grid>
 </Window>

@@ -38,8 +38,11 @@ namespace databaseproject
 
             session_username = username;
             ComboBox profile_resources = comboBox_profile_resources;
-            utilities.openConnection();
-            MySqlCommand fetch_manager = new MySqlCommand("select is_manager,id from schema1.login where name='" + username + "';", utilities.connection);
+            utilities util = new utilities();
+            MySqlConnection conn = util.openConnection();
+            conn.Open();
+            
+            MySqlCommand fetch_manager = new MySqlCommand("select is_manager,id from schema1.login where name='" + username + "';", conn);
             MySqlDataReader reader;
             try
             {
@@ -49,13 +52,14 @@ namespace databaseproject
                     string manager_id = reader[1].ToString();
                     profile_resources.Visibility = System.Windows.Visibility.Visible;
                     reader.Close();
-                    MySqlCommand fetch_resource = new MySqlCommand("select name from schema1.login where manager_id='" + manager_id + "';", utilities.connection);
+                    MySqlCommand fetch_resource = new MySqlCommand("select name from schema1.login where manager_id='" + manager_id + "';", conn);
                     MySqlDataReader reader2;
                     reader2 = fetch_resource.ExecuteReader();
                     while (reader2.Read())
                     {
                         profile_resources.Items.Add(reader2[0].ToString());
                     }
+                    reader2.Close();
 
                 }
             }
@@ -68,13 +72,16 @@ namespace databaseproject
 
         private void comboBox_profile_resources_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MySqlCommand select_resource = new MySqlCommand("select * from schema1.login where name ='" + comboBox_profile_resources.SelectedItem.ToString() + "';", utilities.connection);
+            utilities util = new utilities();
+            MySqlConnection conn = util.openConnection();
+            conn.Open();
+            MySqlCommand select_resource = new MySqlCommand("select * from schema1.login where name ='" + comboBox_profile_resources.SelectedItem.ToString() + "';", conn);
             MySqlDataReader reader ; 
             reader = select_resource.ExecuteReader();
             reader.Read();
             profile_name_value.Text = reader[1].ToString();
             profile_email_value.Text = reader[3].ToString();
-
+            reader.Close();
 
         }
 

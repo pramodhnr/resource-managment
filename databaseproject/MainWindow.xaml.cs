@@ -29,8 +29,10 @@ namespace databaseproject
             try
             {
                 ComboBox signup_manager = comboBox_signup_manager;
-                utilities.openConnection();
-                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1 order by name asc;", utilities.connection);
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                conn.Open();
+                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1 order by name asc;", conn);
                 //comm.Connection = utilities.connection;
                 MySqlDataReader reader;
                 reader = comm.ExecuteReader();
@@ -39,6 +41,7 @@ namespace databaseproject
                     signup_manager.Items.Add(reader[0].ToString());
                 }
                 reader.Close();
+                conn.Close();
                 // utilities.closeConnection();
             }
             catch (Exception ex4)
@@ -48,7 +51,7 @@ namespace databaseproject
             }
             finally
             {
-                utilities.closeConnection();
+               // utilities.closeConnection();
             }
         }
 
@@ -61,9 +64,11 @@ namespace databaseproject
 
                 string login_username = textBox_username.Text;
                 string login_password = passwordBox_password.Password;
-
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                conn.Open();
                 //utilities.openConnection();
-                MySqlCommand command = new MySqlCommand("select * from schema1.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", utilities.connection);
+                MySqlCommand command = new MySqlCommand("select * from schema1.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", conn);
                 MySqlDataReader myreader;
                 myreader = command.ExecuteReader();
                 int count = 0;
@@ -83,7 +88,7 @@ namespace databaseproject
                     MessageBox.Show("incorrect");
                 }
                 //utilities.closeConnection();
-
+                conn.Close();
          }
             catch (Exception ex)
             {
@@ -108,9 +113,12 @@ namespace databaseproject
             try
             {
                 //utilities.openConnection();
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                conn.Open();
                 MySqlDataReader reader1, reader2;
                 // MessageBox.Show(manager_selected);
-                MySqlCommand fetch_manager_id = new MySqlCommand("select * from schema1.login where name='" + signup_manager + "'", utilities.connection);
+                MySqlCommand fetch_manager_id = new MySqlCommand("select * from schema1.login where name='" + signup_manager + "'", conn);
                 
                 reader1 = fetch_manager_id.ExecuteReader();
 
@@ -121,13 +129,14 @@ namespace databaseproject
 
                 string managerid = reader1.GetValue(0).ToString();
                 reader1.Close();
-                MySqlCommand insertnew = new MySqlCommand("insert into schema1.login(name,user_password,email,manager_id,is_manager) values ('" + signup_username + "',sha1('" + signup_password + "'),'" + signup_email + "','" + managerid + "',0);", utilities.connection);
+                MySqlCommand insertnew = new MySqlCommand("insert into schema1.login(name,user_password,email,manager_id,is_manager) values ('" + signup_username + "',sha1('" + signup_password + "'),'" + signup_email + "','" + managerid + "',0);", conn);
 
                 reader2 = insertnew.ExecuteReader();
                 reader2.Read();
                 MessageBox.Show("Successfully inserted");
                 reader2.Close();
                 //utilities.closeConnection();
+                conn.Close();
             }
             catch (Exception ex2)
             {

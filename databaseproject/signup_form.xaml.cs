@@ -29,10 +29,10 @@ namespace databaseproject
         {
             try
             {
-                utilities.openConnection();
-                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO `database`.`login` (`username`, `password`, `First name`, `Last name`, `Employee id`) VALUES ('" + textBox_username.Text + "', '" + passwordBox_password.Password + "', '" + textBox_firstname.Text + "', '" + textBox_lastname.Text + "', '" + textBox_employeeid.Text + "');", utilities.connection);
-                insertCommand.ExecuteNonQuery();
-                utilities.closeConnection();
+                //utilities.openConnection();
+               // MySqlCommand insertCommand = new MySqlCommand("INSERT INTO `database`.`login` (`username`, `password`, `First name`, `Last name`, `Employee id`) VALUES ('" + textBox_username.Text + "', '" + passwordBox_password.Password + "', '" + textBox_firstname.Text + "', '" + textBox_lastname.Text + "', '" + textBox_employeeid.Text + "');", utilities.connection);
+                //insertCommand.ExecuteNonQuery();
+                //utilities.closeConnection();
                 MessageBox.Show("created");
             }
             catch (Exception ex)
