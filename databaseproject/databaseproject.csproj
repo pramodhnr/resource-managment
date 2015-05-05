@@ -59,16 +59,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="changePassword.xaml.cs">
+      <DependentUpon>changePassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="profile.xaml.cs">
       <DependentUpon>profile.xaml</DependentUpon>
     </Compile>
     <Compile Include="signup_form.xaml.cs">
       <DependentUpon>signup_form.xaml</DependentUpon>
     </Compile>
-    <Compile Include="changePassword.xaml.cs">
-      <DependentUpon>changePassword.xaml</DependentUpon>
-    </Compile>
     <Compile Include="utilities.cs" />
+    <Page Include="changePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,10 +90,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="signup_form.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="changePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

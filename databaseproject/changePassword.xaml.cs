@@ -9,18 +9,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
 namespace databaseproject
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for changePassword.xaml
     /// </summary>
-    
-    
-    public partial class changePassword : UserControl
+    public partial class changePassword : Window
     {
         private string username;
         public changePassword()
@@ -66,5 +63,6 @@ namespace databaseproject
                 MessageBox.Show("Passwords do not match");
             }
         }
+    
     }
 }
