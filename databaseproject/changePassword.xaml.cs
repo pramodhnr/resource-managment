@@ -29,6 +29,7 @@ namespace databaseproject
         public changePassword(string session_username)
         {
             username = session_username;
+            InitializeComponent();
             
         }
 
