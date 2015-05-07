@@ -48,3 +48,13 @@ C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.g.cs
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.baml
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\employee_details.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\employee_details.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\adddepartment.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\adddepartment.g.cs
+C:\Users\INSHBHA2\Desktop\resource-managment\databaseproject\obj\x86\Debug\databaseproject.exe
+C:\Users\INSHBHA2\Desktop\resource-managment\databaseproject\obj\x86\Debug\databaseproject.pdb

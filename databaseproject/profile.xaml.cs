@@ -47,7 +47,6 @@ namespace databaseproject
             try
             {
                 reader = fetch_manager.ExecuteReader();
-                reader.Read();
                 if (reader[0].ToString() == "1")
                 {
                     string manager_id = reader[1].ToString();
@@ -66,8 +65,7 @@ namespace databaseproject
             }
             catch (Exception e1)
             {
-               // MessageBox.Show(e1.Message + "e1");
-                MessageBox.Show(e1.StackTrace);
+                MessageBox.Show(e1.Message);
                 Console.WriteLine(e1.StackTrace);
             }
         }
@@ -82,7 +80,7 @@ namespace databaseproject
             reader = select_resource.ExecuteReader();
             reader.Read();
             profile_name_value.Text = reader[1].ToString();
-            profile_email_value.Text = reader[2].ToString();
+            profile_email_value.Text = reader[3].ToString();
             reader.Close();
 
         }
@@ -112,9 +110,7 @@ namespace databaseproject
 
         private void profile_change_password_Click(object sender, RoutedEventArgs e)
         {
-            changePassword changepassword = new changePassword(session_username);
-            changepassword.Show();
-            
+            UserControl changepassword = new changePassword(session_username);
             
         }
         

@@ -144,5 +144,11 @@ namespace databaseproject
                 Console.WriteLine(ex2.StackTrace);
             }
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            employee_details _emp = new employee_details();
+            _emp.ShowDialog();
+        }
     }
 }
