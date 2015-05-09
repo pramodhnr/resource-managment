@@ -47,7 +47,7 @@ namespace databaseproject
                 try
                 {
 
-                    MySqlCommand changepassword = new MySqlCommand("update schema1.login set user_password=sha1('" + change_password_box.Password + "') where name='" + username + "'; ", conn);
+                    MySqlCommand changepassword = new MySqlCommand("update resourcemanage.login set user_password=sha1('" + change_password_box.Password + "') where name='" + username + "'; ", conn);
                     MySqlDataReader reader;
                     reader = changepassword.ExecuteReader();
                     reader.Read();

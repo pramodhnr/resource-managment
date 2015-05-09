@@ -41,18 +41,19 @@ namespace databaseproject
             utilities util = new utilities();
             MySqlConnection conn = util.openConnection();
             conn.Open();
-            
-            MySqlCommand fetch_manager = new MySqlCommand("select is_manager,id from schema1.login where name='" + username + "';", conn);
+
+            MySqlCommand fetch_manager = new MySqlCommand("select is_manager,id from resourcemanage.login where name='" + username + "';", conn);
             MySqlDataReader reader;
             try
             {
                 reader = fetch_manager.ExecuteReader();
+                reader.Read();
                 if (reader[0].ToString() == "1")
                 {
                     string manager_id = reader[1].ToString();
                     profile_resources.Visibility = System.Windows.Visibility.Visible;
                     reader.Close();
-                    MySqlCommand fetch_resource = new MySqlCommand("select name from schema1.login where manager_id='" + manager_id + "';", conn);
+                    MySqlCommand fetch_resource = new MySqlCommand("select name from resourcemanage.login where manager_id='" + manager_id + "';", conn);
                     MySqlDataReader reader2;
                     reader2 = fetch_resource.ExecuteReader();
                     while (reader2.Read())
@@ -75,7 +76,7 @@ namespace databaseproject
             utilities util = new utilities();
             MySqlConnection conn = util.openConnection();
             conn.Open();
-            MySqlCommand select_resource = new MySqlCommand("select * from schema1.login where name ='" + comboBox_profile_resources.SelectedItem.ToString() + "';", conn);
+            MySqlCommand select_resource = new MySqlCommand("select * from resourcemanage.login where name ='" + comboBox_profile_resources.SelectedItem.ToString() + "';", conn);
             MySqlDataReader reader ; 
             reader = select_resource.ExecuteReader();
             reader.Read();

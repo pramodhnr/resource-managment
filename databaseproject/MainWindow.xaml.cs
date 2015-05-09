@@ -32,7 +32,7 @@ namespace databaseproject
                 utilities util = new utilities();
                 MySqlConnection conn = util.openConnection();
                 conn.Open();
-                MySqlCommand comm = new MySqlCommand("select name from schema1.login where is_manager=1 order by name asc;", conn);
+                MySqlCommand comm = new MySqlCommand("select name from resourcemanage.login where is_manager=1 order by name asc;", conn);
                 //comm.Connection = utilities.connection;
                 MySqlDataReader reader;
                 reader = comm.ExecuteReader();
@@ -68,7 +68,7 @@ namespace databaseproject
                 MySqlConnection conn = util.openConnection();
                 conn.Open();
                 //utilities.openConnection();
-                MySqlCommand command = new MySqlCommand("select * from schema1.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", conn);
+                MySqlCommand command = new MySqlCommand("select * from resourcemanage.login where name='" + login_username + "' and user_password=sha1('" + login_password + "');", conn);
                 MySqlDataReader myreader;
                 myreader = command.ExecuteReader();
                 int count = 0;
@@ -107,7 +107,11 @@ namespace databaseproject
             string signup_password = textBox_signup_password.Password;
             string signup_email = textBox_signup_email.Text;
 
-            string signup_manager = comboBox_signup_manager.SelectedItem.ToString();
+            string signup_manager ;
+           /* if (comboBox_signup_manager.SelectedItem.ToString() = "null")
+                signup_manager = null;
+            else */
+            signup_manager= comboBox_signup_manager.SelectedItem.ToString();
 
 
             try
@@ -118,7 +122,7 @@ namespace databaseproject
                 conn.Open();
                 MySqlDataReader reader1, reader2;
                 // MessageBox.Show(manager_selected);
-                MySqlCommand fetch_manager_id = new MySqlCommand("select * from schema1.login where name='" + signup_manager + "'", conn);
+                MySqlCommand fetch_manager_id = new MySqlCommand("select * from resourcemanage.login where name='" + signup_manager + "'", conn);
                 
                 reader1 = fetch_manager_id.ExecuteReader();
 
@@ -129,7 +133,7 @@ namespace databaseproject
 
                 string managerid = reader1.GetValue(0).ToString();
                 reader1.Close();
-                MySqlCommand insertnew = new MySqlCommand("insert into schema1.login(name,user_password,email,manager_id,is_manager) values ('" + signup_username + "',sha1('" + signup_password + "'),'" + signup_email + "','" + managerid + "',0);", conn);
+                MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.login(name,user_password,email,manager_id,is_manager) values ('" + signup_username + "',sha1('" + signup_password + "'),'" + signup_email + "','" + managerid + "',0);", conn);
 
                 reader2 = insertnew.ExecuteReader();
                 reader2.Read();

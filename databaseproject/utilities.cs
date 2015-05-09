@@ -24,7 +24,7 @@ namespace databaseproject
         {
             try
             {
-                string connectionString = "datasource=localhost;port=3305;username=root;password=root";
+                string connectionString = "datasource=db4free.net;port=3306;username=shilppramodh;password=asdfzxcv";
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 return connection;
                 
