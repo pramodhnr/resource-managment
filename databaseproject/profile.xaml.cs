@@ -133,7 +133,7 @@ namespace databaseproject
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = System.Windows.Visibility.Hidden;
+            button1.Visibility = System.Windows.Visibility.Hidden;
             button4.Visibility = System.Windows.Visibility.Visible;
             button5.Visibility = System.Windows.Visibility.Visible;
             profile_name.IsReadOnly = false;
@@ -142,7 +142,7 @@ namespace databaseproject
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = System.Windows.Visibility.Hidden;
+            button2.Visibility = System.Windows.Visibility.Hidden;
             button6.Visibility = System.Windows.Visibility.Visible;
             button7.Visibility = System.Windows.Visibility.Visible;
             profile_email.IsReadOnly = false;
