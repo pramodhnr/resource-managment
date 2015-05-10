@@ -58,6 +58,7 @@ namespace databaseproject
             conn.Open();
             MySqlCommand fetchDeptNames = new MySqlCommand("select dept_name from resourcemanage.department;", conn);
             reader = fetchDeptNames.ExecuteReader();
+            
             while (reader.Read())
             {
                 _emp.comboBox_department.Items.Add(reader[0].ToString());
