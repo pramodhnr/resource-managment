@@ -10,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+
 
 namespace databaseproject
 {
@@ -18,9 +20,41 @@ namespace databaseproject
     /// </summary>
     public partial class adddepartment : Window
     {
+        #region variables
+        string _deptName;
+        MySqlDataReader reader;
+        employee_details _ed = new employee_details();
+        #endregion variables
         public adddepartment()
         {
             InitializeComponent();
         }
+
+        private void button_ok_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+               l1: if (textBox_deptName.Text != "\0")
+                {
+                    _deptName = textBox_deptName.Text;
+                    utilities util = new utilities();
+                    MySqlConnection conn = util.openConnection();
+                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.department(dept_name) values ('" + _deptName + "');", conn);
+                    reader = insertnew.ExecuteReader();
+                    _ed.comboBox_department.Items.Add(_deptName);
+                    MessageBox.Show("Department" + _deptName + "is successfully added"); 
+                }
+                else
+                {
+                    MessageBox.Show("Add the department name and press ok");
+                    goto l1;
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+        }
+
+      
     }
 }
