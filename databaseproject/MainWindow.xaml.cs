@@ -79,6 +79,7 @@ namespace databaseproject
                 if (count == 1)
                 {
                     //MessageBox.Show("correct");
+                    //login_rectangle.Visibility = System.Windows.Visibility.Visible;
                     Window user_profile = new profile(myreader[1].ToString());
                     this.Hide();
                     user_profile.Show();

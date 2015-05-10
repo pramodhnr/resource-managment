@@ -83,6 +83,7 @@ namespace databaseproject
             profile_name_value.Text = reader[1].ToString();
             profile_email_value.Text = reader[3].ToString();
             reader.Close();
+            conn.Close();
 
         }
 
@@ -113,6 +114,69 @@ namespace databaseproject
         {
             UserControl changepassword = new changePassword(session_username);
             
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            profile_name.IsReadOnly = true;
+            this.Visibility = System.Windows.Visibility.Hidden;
+            button5.Visibility = System.Windows.Visibility.Hidden;
+            button1.Visibility = System.Windows.Visibility.Visible;
+            utilities util = new utilities();
+            MySqlConnection conn = util.openConnection();
+            MySqlDataReader reader;
+            MySqlCommand comm = new MySqlCommand("update  ",conn);
+            reader = comm.ExecuteReader();
+            reader.Read();
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = System.Windows.Visibility.Hidden;
+            button4.Visibility = System.Windows.Visibility.Visible;
+            button5.Visibility = System.Windows.Visibility.Visible;
+            profile_name.IsReadOnly = false;
+
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = System.Windows.Visibility.Hidden;
+            button6.Visibility = System.Windows.Visibility.Visible;
+            button7.Visibility = System.Windows.Visibility.Visible;
+            profile_email.IsReadOnly = false;
+
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+
         }
         
     }

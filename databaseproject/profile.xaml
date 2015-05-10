@@ -11,14 +11,14 @@
         <TextBox Height="19" HorizontalAlignment="Left" Margin="176,120,0,0" Name="profile_email" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
         <TextBox Height="19" HorizontalAlignment="Left" Margin="176,156,0,0" Name="profile_work_hours" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
         <Button Content="Change Password" Height="25" HorizontalAlignment="Left" Margin="480,5,0,0" Name="profile_change_password" VerticalAlignment="Top" Width="117" Click="profile_change_password_Click" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="308,76,0,0" Name="profile_name_edit" Stretch="Fill" VerticalAlignment="Top" Width="16" Source="/databaseproject;component/Resources/Text-Edit-icon.png" ImageFailed="profile_name_edit_ImageFailed" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="308,120,0,0" Name="profile_email_edit" Stretch="Fill" VerticalAlignment="Top" Width="16" Source="/databaseproject;component/Resources/Text-Edit-icon.png" ImageFailed="profile_email_edit_ImageFailed" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="308,156,0,0" Name="profile_work_hours_edit" Stretch="Fill" VerticalAlignment="Top" Width="16" Source="/databaseproject;component/Resources/Text-Edit-icon.png" ImageFailed="profile_work_hours_edit_ImageFailed" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="330,76,0,0" Name="image1" Source="/databaseproject;component/Resources/check-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="330,120,0,0" Name="image2" Source="/databaseproject;component/Resources/check-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="330,156,0,0" Name="image3" Source="/databaseproject;component/Resources/check-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="352,76,0,0" Name="image4" Source="/databaseproject;component/Resources/no-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="352,120,0,0" Name="image5" Source="/databaseproject;component/Resources/no-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" Visibility="Hidden" />
-        <Image Height="16" HorizontalAlignment="Left" Margin="352,156,0,0" Name="image6" Source="/databaseproject;component/Resources/no-icon.png" Stretch="Fill" VerticalAlignment="Top" Width="16" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="310,76,0,0" Name="button1" VerticalAlignment="Top" Width="16" Click="button1_Click" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="310,120,0,0" Name="button2" VerticalAlignment="Top" Width="16" Click="button2_Click" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="310,159,0,0" Name="button3" VerticalAlignment="Top" Width="16" Click="button3_Click" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="344,76,0,0" Name="button4" VerticalAlignment="Top" Width="16" Click="button4_Click" Visibility="Hidden"/>
+        <Button Height="16" HorizontalAlignment="Left" Margin="366,76,0,0" Name="button5" VerticalAlignment="Top" Width="16" Visibility="Hidden" Click="button5_Click" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="344,120,0,0" Name="button6" VerticalAlignment="Top" Width="16" Visibility="Hidden" Click="button6_Click" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="366,120,0,0" Name="button7" VerticalAlignment="Top" Width="16" Visibility="Hidden" Click="button7_Click" />
+        <Button Height="16" Margin="344,159,0,0" Name="button8" VerticalAlignment="Top" Click="button8_Click" HorizontalAlignment="Left" Width="16" Visibility="Hidden" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="366,159,0,0" Name="button9" VerticalAlignment="Top" Width="16" Click="button9_Click" Visibility="Hidden" />
     </Grid>
 </Window>
