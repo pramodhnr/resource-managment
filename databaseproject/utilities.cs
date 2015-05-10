@@ -62,7 +62,7 @@ namespace databaseproject
             {
                 _emp.comboBox_department.Items.Add(reader[0].ToString());
             }
-
+            conn.Close();
 
         }
     }

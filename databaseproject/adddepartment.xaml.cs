@@ -39,10 +39,12 @@ namespace databaseproject
                     _deptName = textBox_deptName.Text;
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
+                    conn.Open();
                     MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.department(dept_name) values ('" + _deptName + "');", conn);
                     reader = insertnew.ExecuteReader();
                     _ed.comboBox_department.Items.Add(_deptName);
-                    MessageBox.Show("Department" + _deptName + "is successfully added"); 
+                    MessageBox.Show("Department" + _deptName + "is successfully added");
+                    conn.Close();
                 }
                 else
                 {
@@ -52,6 +54,7 @@ namespace databaseproject
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
 
