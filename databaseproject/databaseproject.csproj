@@ -77,6 +77,9 @@
       <DependentUpon>changePassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="utilities.cs" />
+    <Compile Include="Window_manageResources.xaml.cs">
+      <DependentUpon>Window_manageResources.xaml</DependentUpon>
+    </Compile>
     <Page Include="adddepartment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="changePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_manageResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

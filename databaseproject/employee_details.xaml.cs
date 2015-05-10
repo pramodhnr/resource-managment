@@ -27,6 +27,7 @@ namespace databaseproject
         {
             adddepartment _adddepartment = new adddepartment();
             _adddepartment.ShowDialog();
+
         }
 
         private void button10_Click(object sender, RoutedEventArgs e)
@@ -69,6 +70,11 @@ namespace databaseproject
         {
             adddepartment _adddepartment = new adddepartment();
             _adddepartment.ShowDialog();
+        }
+
+        private void button_manageresources_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -20,6 +20,7 @@ namespace databaseproject
     {
         public  string connectionString;
         public  MySqlConnection connection;
+        public static employee_details _emp = new employee_details();
         public  MySqlConnection openConnection()
         {
             try
@@ -47,6 +48,22 @@ namespace databaseproject
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
+        }
+        public void populate_department()
+        {
+
+            utilities util = new utilities();
+            MySqlDataReader reader;
+            MySqlConnection conn = util.openConnection();
+            conn.Open();
+            MySqlCommand fetchDeptNames = new MySqlCommand("select dept_name from resourcemanage.department;", conn);
+            reader = fetchDeptNames.ExecuteReader();
+            while (reader.Read())
+            {
+                _emp.comboBox_department.Items.Add(reader[0].ToString());
+            }
+
+
         }
     }
 }

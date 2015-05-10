@@ -22,6 +22,7 @@ namespace databaseproject
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             
@@ -152,8 +153,11 @@ namespace databaseproject
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            utilities _util = new utilities();
             employee_details _emp = new employee_details();
             _emp.ShowDialog();
+            _util.populate_department();
         }
+        
     }
 }

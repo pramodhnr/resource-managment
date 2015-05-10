@@ -7,8 +7,8 @@
             <RowDefinition Height="272*" />
             <RowDefinition Height="28*" />
         </Grid.RowDefinitions>
-        <Label Content="name" Height="28" HorizontalAlignment="Left" Margin="38,24,0,0" Name="label1" VerticalAlignment="Top" Width="43" />
-        <TextBox Height="31" HorizontalAlignment="Left" Margin="113,21,0,0" Name="textBox1" VerticalAlignment="Top" Width="172" />
-        <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="210,76,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <Label Content="name" Height="28" HorizontalAlignment="Left" Margin="38,24,0,0" Name="label_name" VerticalAlignment="Top" Width="43" />
+        <TextBox Height="31" HorizontalAlignment="Left" Margin="113,21,0,0" Name="textBox_deptName" VerticalAlignment="Top" Width="172" />
+        <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="210,78,0,0" Name="button_ok" VerticalAlignment="Top" Width="75" Click="button_ok_Click" />
     </Grid>
 </Window>
