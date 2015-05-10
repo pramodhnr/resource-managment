@@ -51,19 +51,25 @@ namespace databaseproject
         }
         public void populate_department()
         {
-
-            utilities util = new utilities();
-            MySqlDataReader reader;
-            MySqlConnection conn = util.openConnection();
-            conn.Open();
-            MySqlCommand fetchDeptNames = new MySqlCommand("select dept_name from resourcemanage.department;", conn);
-            reader = fetchDeptNames.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                _emp.comboBox_department.Items.Add(reader[0].ToString());
-            }
-            conn.Close();
 
+                utilities util = new utilities();
+                MySqlDataReader reader;
+                MySqlConnection conn = util.openConnection();
+                conn.Open();
+                MySqlCommand fetchDeptNames = new MySqlCommand("select dept_name from resourcemanage.department;", conn);
+                reader = fetchDeptNames.ExecuteReader();
+                while (reader.Read())
+                {
+                    _emp.comboBox_department.Items.Add(reader[0].ToString());
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }
