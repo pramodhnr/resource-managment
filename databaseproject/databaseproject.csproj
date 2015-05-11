@@ -64,9 +64,13 @@
     <Compile Include="adddepartment.xaml.cs">
       <DependentUpon>adddepartment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="bulk_add.xaml.cs">
+      <DependentUpon>bulk_add.xaml</DependentUpon>
+    </Compile>
     <Compile Include="employee_details.xaml.cs">
       <DependentUpon>employee_details.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="profile.xaml.cs">
       <DependentUpon>profile.xaml</DependentUpon>
     </Compile>
@@ -81,6 +85,10 @@
       <DependentUpon>Window_manageResources.xaml</DependentUpon>
     </Compile>
     <Page Include="adddepartment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="bulk_add.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

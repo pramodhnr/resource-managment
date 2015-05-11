@@ -159,6 +159,12 @@ namespace databaseproject
 
             utilities._emp.ShowDialog();
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            bulk_add bulk = new bulk_add();
+            bulk.Show();
+        }
         
     }
 }

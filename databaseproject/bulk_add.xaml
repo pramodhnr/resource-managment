@@ -1,0 +1,9 @@
+﻿<Window x:Class="databaseproject.bulk_add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="bulk_add" Height="300" Width="300">
+    <Grid>
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="38,85,0,0" Name="filepath" VerticalAlignment="Top" Width="126" IsReadOnly="True" />
+        <Button Content="Browse" HorizontalAlignment="Left" Margin="176,85,0,155" Name="button1" Width="91" Click="button1_Click" />
+    </Grid>
+</Window>

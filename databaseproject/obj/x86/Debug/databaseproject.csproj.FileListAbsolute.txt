@@ -64,3 +64,7 @@ C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\employee_details.g.cs
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\Window_manageResources.baml
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\Window_manageResources.g.cs
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\Window_manageResources.baml
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\Window_manageResources.g.cs
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.baml
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.g.cs
