@@ -17,7 +17,6 @@
         </StackPanel>
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,87,0,0" Name="button_adddepartment" VerticalAlignment="Top" Width="18" Click="button1_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,208" Name="button_viewdpeartment" VerticalAlignment="Bottom" Width="32" />
-        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,208" Name="button_deletedepartment" VerticalAlignment="Bottom" Width="42" Click="button6_Click" />
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,207,0,0" Name="button_addproject" VerticalAlignment="Top" Width="18" Click="button2_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,88" Name="button_viewproject" VerticalAlignment="Bottom" Width="32" />
         <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,87" Name="button_deleteproject" VerticalAlignment="Bottom" Width="42" Click="button4_Click" />
@@ -28,5 +27,6 @@
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,168" Name="button_viewgroup" VerticalAlignment="Bottom" Width="32" />
         <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,168" Name="button_deletegroup" VerticalAlignment="Bottom" Width="42" Click="button12_Click" />
         <Button Content="Manage resources" Height="23" HorizontalAlignment="Left" Margin="164,273,0,0" Name="button_manageresources" VerticalAlignment="Top" Width="107" Click="button_manageresources_Click" />
+        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,207" Name="button_deletedepartment" VerticalAlignment="Bottom" Width="42" Click="button_deletedepartment_Click" />
     </Grid>
 </Window>
