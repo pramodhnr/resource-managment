@@ -18,6 +18,7 @@ namespace databaseproject
     /// Interaction logic for bulk_add.xaml
     /// </summary>
     
+
     public partial class bulk_add : Window
     {
         
@@ -52,15 +53,12 @@ namespace databaseproject
             filepath.ToolTip = filename;
             IEnumerable<Person> person = ReadCSV(filename);
             IEnumerator<Person> values=  person.GetEnumerator();
-            //values.Reset();
-            MessageBox.Show(values.Current.Username);
-            values.MoveNext();
-            MessageBox.Show(values.Current.Username);
-
-           /* foreach (Person p in values)
+            
+           
+       /*     foreach (Person p in values)
             {
                 MessageBox.Show(p.Username, p.email);
-            }*/
+            }  */
         }
     }
 
