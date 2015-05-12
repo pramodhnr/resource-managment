@@ -49,22 +49,42 @@ namespace databaseproject
                 Console.WriteLine(ex.StackTrace);
             }
         }
-        public void populate_department()
+        public void populate_comboboxes()
         {
-
             utilities util = new utilities();
             MySqlDataReader reader;
             MySqlConnection conn = util.openConnection();
             conn.Open();
             MySqlCommand fetchDeptNames = new MySqlCommand("select dept_name from resourcemanage.department;", conn);
             reader = fetchDeptNames.ExecuteReader();
-            
             while (reader.Read())
             {
                 _emp.comboBox_department.Items.Add(reader[0].ToString());
             }
+            MySqlCommand fetchGroupNames = new MySqlCommand("select group_name from resourcemanage.groups;", conn);
+            reader.Close();
+            reader = fetchGroupNames.ExecuteReader();
+            while (reader.Read())
+            {
+                _emp.comboBox_group.Items.Add(reader[0].ToString());
+            }
+            reader.Close();
+            MySqlCommand fetchTeamNames = new MySqlCommand("select team_name from resourcemanage.team;", conn);
+            reader = fetchTeamNames.ExecuteReader();
+            while (reader.Read())
+            {
+                _emp.comboBox_team.Items.Add(reader[0].ToString());
+            }
+            reader.Close();
+            MySqlCommand fetchProjectNames = new MySqlCommand("select project_name from resourcemanage.project;", conn);
+            reader = fetchProjectNames.ExecuteReader();
+            while (reader.Read())
+            {
+                _emp.comboBox_project.Items.Add(reader[0].ToString());
+            }
+            reader.Close();
             conn.Close();
-
         }
+
     }
 }

@@ -155,7 +155,7 @@ namespace databaseproject
         {
             utilities _util = new utilities();
             //employee_details _emp = new employee_details();
-            _util.populate_department();
+            _util.populate_comboboxes();
 
             utilities._emp.ShowDialog();
         }

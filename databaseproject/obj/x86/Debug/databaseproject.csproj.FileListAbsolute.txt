@@ -48,14 +48,10 @@ C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.g.cs
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.baml
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.g.cs
-C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\employee_details.baml
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.baml
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.baml
-C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\employee_details.g.cs
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\profile.g.cs
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.g.cs
-C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\adddepartment.baml
-C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\adddepartment.g.cs
 C:\Users\INSHBHA2\Desktop\resource-managment\databaseproject\obj\x86\Debug\databaseproject.exe
 C:\Users\INSHBHA2\Desktop\resource-managment\databaseproject\obj\x86\Debug\databaseproject.pdb
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\adddepartment.baml
@@ -68,3 +64,15 @@ C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\Window_manageResources.g.cs
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.baml
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\adddepartment.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\employee_details.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_addteam.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_addGroup.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\adddepartment.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\employee_details.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_addteam.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_addGroup.g.cs
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_AddProject.baml
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_AddProject.g.cs

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\
 databaseproject
 none
 false
 DEBUG;TRACE
-C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\App.xaml
-81044005649
+C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\App.xaml
+111917671869
 
-141116249270
-16994706143
-adddepartment.xaml;bulk_add.xaml;employee_details.xaml;MainWindow.xaml;profile.xaml;signup_form.xaml;changePassword.xaml;Window_manageResources.xaml;
+17284692754
+16499850462
+manageResources\adddepartment.xaml;bulk_add.xaml;manageResources\employee_details.xaml;MainWindow.xaml;manageResources\Window_AddProject.xaml;manageResources\Window_addteam.xaml;profile.xaml;signup_form.xaml;changePassword.xaml;manageResources\Window_addGroup.xaml;Window_manageResources.xaml;
 
 False
 

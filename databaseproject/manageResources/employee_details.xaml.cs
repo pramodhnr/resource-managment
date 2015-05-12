@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using databaseproject.manageResources;
 
 namespace databaseproject
 {
@@ -32,20 +33,20 @@ namespace databaseproject
 
         private void button10_Click(object sender, RoutedEventArgs e)
         {
-            adddepartment _adddepartment = new adddepartment();
-            _adddepartment.ShowDialog();
+            Window_addGroup _addGroup = new Window_addGroup();
+            _addGroup.ShowDialog();
         }
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
-            adddepartment _adddepartment = new adddepartment();
-            _adddepartment.ShowDialog();
+            Window_addteam _addTeam = new Window_addteam();
+            _addTeam.ShowDialog();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            adddepartment _adddepartment = new adddepartment();
-            _adddepartment.ShowDialog();
+            Window_AddProject _addProject = new Window_AddProject();
+            _addProject.ShowDialog();
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
