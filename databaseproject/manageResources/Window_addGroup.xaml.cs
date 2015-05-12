@@ -16,16 +16,15 @@ using MySql.Data.MySqlClient;
 namespace databaseproject
 {
     /// <summary>
-    /// Interaction logic for adddepartment.xaml
+    /// Interaction logic for Window_addGroup.xaml
     /// </summary>
-    public partial class adddepartment : Window
+    public partial class Window_addGroup : Window
     {
         #region variables
-        string _deptName;
+        string _groupName;
         MySqlDataReader reader;
-        employee_details _ed = new employee_details();
         #endregion variables
-        public adddepartment()
+        public Window_addGroup()
         {
             InitializeComponent();
         }
@@ -34,30 +33,29 @@ namespace databaseproject
         {
             try
             {
-               l1: if (textBox_deptName.Text != "\0")
+            l1: if (textBox_groupName.Text != "\0")
                 {
-                    _deptName = textBox_deptName.Text;
+                    _groupName = textBox_groupName.Text;
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
                     conn.Open();
-                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.department(dept_name) values ('" + _deptName + "');", conn);
+                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.groups(group_name) values ('" + _groupName + "');", conn);
                     reader = insertnew.ExecuteReader();
-                    _ed.comboBox_department.Items.Add(_deptName);
-                    MessageBox.Show("Department" + _deptName + "is successfully added");
+                    utilities._emp.comboBox_group.Items.Add(_groupName);
+                    MessageBox.Show("Group "+ _groupName+" is successfully added");
+                    this.Close();
                     conn.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Add the department name and press ok");
+                    MessageBox.Show("Add the group name and press ok");
                     goto l1;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-      
     }
 }
