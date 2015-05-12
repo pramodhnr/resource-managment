@@ -10,10 +10,10 @@
             <Label Content="Project" Height="40" Name="label_project" />
         </StackPanel>
         <StackPanel Height="160" HorizontalAlignment="Left" Margin="118,86,0,0" Name="stackPanel_comboboxes" VerticalAlignment="Top" Width="200">
-            <ComboBox Height="40" Name="comboBox_department" Width="199" IsEditable="True" IsManipulationEnabled="True" />
-            <ComboBox Height="40" IsEditable="True" Name="comboBox_group" Width="199" />
-            <ComboBox Height="40" IsEditable="True" Name="comboBox_team" Width="199" />
-            <ComboBox Height="40" IsEditable="True" Name="comboBox_project" Width="199" />
+            <ComboBox Height="40" Name="comboBox_department" Width="199" IsEditable="True" IsManipulationEnabled="False" IsReadOnly="False" />
+            <ComboBox Height="40" IsEditable="True" Name="comboBox_group" Width="199" IsReadOnly="False" IsManipulationEnabled="False" />
+            <ComboBox Height="40" IsEditable="True" Name="comboBox_team" Width="199" IsManipulationEnabled="False" />
+            <ComboBox Height="40" IsEditable="True" Name="comboBox_project" Width="199" IsManipulationEnabled="False" IsReadOnly="False" />
         </StackPanel>
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,87,0,0" Name="button_adddepartment" VerticalAlignment="Top" Width="18" Click="button1_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,208" Name="button_viewdpeartment" VerticalAlignment="Bottom" Width="32" />
