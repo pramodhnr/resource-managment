@@ -54,8 +54,6 @@ C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\De
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\changePassword.g.cs
 C:\Users\INSHBHA2\Desktop\resource-managment\databaseproject\obj\x86\Debug\databaseproject.exe
 C:\Users\INSHBHA2\Desktop\resource-managment\databaseproject\obj\x86\Debug\databaseproject.pdb
-C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\Window_manageResources.baml
-C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\Window_manageResources.g.cs
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.baml
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.g.cs
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\bulk_add.baml
@@ -82,3 +80,5 @@ C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_addGroup.g.cs
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.baml
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.g.cs
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.baml
+C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.g.cs
