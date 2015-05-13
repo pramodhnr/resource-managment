@@ -19,14 +19,14 @@
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,208" Name="button_viewdpeartment" VerticalAlignment="Bottom" Width="32" />
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,207,0,0" Name="button_addproject" VerticalAlignment="Top" Width="18" Click="button2_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,88" Name="button_viewproject" VerticalAlignment="Bottom" Width="32" />
-        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,87" Name="button_deleteproject" VerticalAlignment="Bottom" Width="42" Click="button4_Click" />
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,167,0,0" Name="button_addteam" VerticalAlignment="Top" Width="18" Click="button7_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,128" Name="button_viewteam" VerticalAlignment="Bottom" Width="32" />
-        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,127" Name="button_deleteteam" VerticalAlignment="Bottom" Width="42" Click="button9_Click" />
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,127,0,0" Name="button_addgroup" VerticalAlignment="Top" Width="18" Click="button10_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,168" Name="button_viewgroup" VerticalAlignment="Bottom" Width="32" />
-        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,168" Name="button_deletegroup" VerticalAlignment="Bottom" Width="42" Click="button12_Click" />
         <Button Content="Manage resources" Height="23" HorizontalAlignment="Left" Margin="164,273,0,0" Name="button_manageresources" VerticalAlignment="Top" Width="107" Click="button_manageresources_Click" />
         <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,207" Name="button_deletedepartment" VerticalAlignment="Bottom" Width="42" Click="button_deletedepartment_Click" />
+        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,167" Name="button1_deletegroup" VerticalAlignment="Bottom" Width="42" Click="button1_deletegroup_Click" />
+        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,127" Name="button_deleteteam" VerticalAlignment="Bottom" Width="42" Click="button_deleteteam_Click" />
+        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="411,0,0,87" Name="button_deleteProject" VerticalAlignment="Bottom" Width="42" Click="button_deleteProject_Click" />
     </Grid>
 </Window>

@@ -90,7 +90,7 @@
     <Compile Include="manageResources\Window_addGroup.xaml.cs">
       <DependentUpon>Window_addGroup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window_manageResources.xaml.cs">
+    <Compile Include="manageResources\Window_manageResources.xaml.cs">
       <DependentUpon>Window_manageResources.xaml</DependentUpon>
     </Compile>
     <Page Include="manageResources\adddepartment.xaml">
@@ -141,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window_manageResources.xaml">
+    <Page Include="manageResources\Window_manageResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
