@@ -73,7 +73,8 @@ namespace databaseproject
 
         private void button_manageresources_Click(object sender, RoutedEventArgs e)
         {
-
+            Window_manageResources _mr = new Window_manageResources();
+            _mr.ShowDialog();
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
@@ -103,6 +104,99 @@ namespace databaseproject
                 else
                 {
                     MessageBox.Show("Select the department to be delted");
+                    goto l1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_deletegroup_Click(object sender, RoutedEventArgs e)
+        {
+            MySqlDataReader reader;
+            string _group = comboBox_group.SelectedItem.ToString();
+            try
+            {
+            l1: if (_group != "\0")
+                {
+
+                    utilities util = new utilities();
+                    MySqlConnection conn = util.openConnection();
+                    conn.Open();
+                    MySqlCommand deleteGroup = new MySqlCommand("DELETE FROM resourcemanage.groups WHERE dept_name = '" + _group + "'", conn);
+                    reader = deleteGroup.ExecuteReader();
+                    utilities._emp.comboBox_project.Items.Remove(_group);
+                    reader.Close();
+                    MessageBox.Show("Department " + _group + " is successfully deleted");
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Select the group to be delted");
+                    goto l1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_deleteteam_Click(object sender, RoutedEventArgs e)
+        {
+            MySqlDataReader reader;
+            string _team = comboBox_team.SelectedItem.ToString();
+            try
+            {
+            l1: if (_team != "\0")
+                {
+
+                    utilities util = new utilities();
+                    MySqlConnection conn = util.openConnection();
+                    conn.Open();
+                    MySqlCommand deleteTeam = new MySqlCommand("DELETE FROM resourcemanage.team WHERE dept_name = '" + _team + "'", conn);
+                    reader = deleteTeam.ExecuteReader();
+                    utilities._emp.comboBox_project.Items.Remove(_team);
+                    reader.Close();
+                    MessageBox.Show("Team " + _team + " is successfully deleted");
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Select the team to be delted");
+                    goto l1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_deleteProject_Click(object sender, RoutedEventArgs e)
+        {
+            MySqlDataReader reader;
+            string _project = comboBox_project.SelectedItem.ToString();
+            try
+            {
+            l1: if (_project != "\0")
+                {
+
+                    utilities util = new utilities();
+                    MySqlConnection conn = util.openConnection();
+                    conn.Open();
+                    MySqlCommand deleteProject = new MySqlCommand("DELETE FROM resourcemanage.project WHERE dept_name = '" + _project + "'", conn);
+                    reader = deleteProject.ExecuteReader();
+                    utilities._emp.comboBox_project.Items.Remove(_project);
+                    reader.Close();
+                    MessageBox.Show("Project " + _project + " is successfully deleted");
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Select the project to be delted");
                     goto l1;
                 }
             }
