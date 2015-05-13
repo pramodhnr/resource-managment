@@ -20,6 +20,5 @@
         <Button Height="16" HorizontalAlignment="Left" Margin="366,120,0,0" Name="button7" VerticalAlignment="Top" Width="16" Visibility="Hidden" Click="button7_Click" />
         <Button Height="16" Margin="344,159,0,0" Name="button8" VerticalAlignment="Top" Click="button8_Click" HorizontalAlignment="Left" Width="16" Visibility="Hidden" />
         <Button Height="16" HorizontalAlignment="Left" Margin="366,159,0,0" Name="button9" VerticalAlignment="Top" Width="16" Click="button9_Click" Visibility="Hidden" />
-        <ComboBox Height="26" HorizontalAlignment="Left" Margin="178,190,0,0" Name="comboBox1" VerticalAlignment="Top" Width="125" IsReadOnly="True" IsEnabled="False" />
     </Grid>
 </Window>

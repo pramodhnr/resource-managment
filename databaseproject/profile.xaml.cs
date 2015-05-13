@@ -23,7 +23,6 @@ namespace databaseproject
         TextBox profile_name_value;
         TextBox profile_email_value;
         TextBox profile_work_hours_value;
-        ComboBox emp_manager;
 
         private string session_username;
         public profile()
@@ -55,7 +54,7 @@ namespace databaseproject
                     string manager_id = reader[1].ToString();
                     profile_resources.Visibility = System.Windows.Visibility.Visible;
                     reader.Close();
-                    MySqlCommand fetch_resource = new MySqlCommand("select user_name from resourcemanage.employee ;", conn);
+                    MySqlCommand fetch_resource = new MySqlCommand("select name from resourcemanage.login where manager_id='" + manager_id + "';", conn);
                     MySqlDataReader reader2;
                     reader2 = fetch_resource.ExecuteReader();
                     while (reader2.Read())
@@ -70,7 +69,6 @@ namespace databaseproject
             {
                 MessageBox.Show(e1.Message);
                 Console.WriteLine(e1.StackTrace);
-                
             }
         }
 
@@ -90,7 +88,34 @@ namespace databaseproject
 
         }
 
-        
+        private void profile_name_edit_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            
+            profile_name_value.IsReadOnly = false;
+            this.Visibility = System.Windows.Visibility.Hidden;
+
+
+        }
+
+        private void profile_email_edit_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            
+            profile_email_value.IsReadOnly = false;
+            this.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        private void profile_work_hours_edit_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            
+            profile_work_hours_value.IsReadOnly = false;
+            this.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        private void profile_change_password_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl changepassword = new changePassword(session_username);
+            
+        }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
@@ -101,7 +126,7 @@ namespace databaseproject
             utilities util = new utilities();
             MySqlConnection conn = util.openConnection();
             MySqlDataReader reader;
-            MySqlCommand comm = new MySqlCommand("update resourcemanage.employee   ",conn);
+            MySqlCommand comm = new MySqlCommand("update  ",conn);
             reader = comm.ExecuteReader();
             reader.Read();
 
