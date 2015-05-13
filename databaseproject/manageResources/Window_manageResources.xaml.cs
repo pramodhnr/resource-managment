@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using System.Data;
+
 
 namespace databaseproject
 {
@@ -21,6 +24,28 @@ namespace databaseproject
         public Window_manageResources()
         {
             InitializeComponent();
+        }
+        public void bindToEmployeeTable()
+        {
+            utilities _util = new utilities();
+            MySqlConnection conn;
+            try
+            {
+                _util.openConnection();
+                conn = _util.openConnection();
+                conn.Open();
+                MySqlCommand fetchEmpDetails = new MySqlCommand("select emp_name,project_id,loading,email_id from resourcemanage.employee", conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(fetchEmpDetails);
+                DataSet _ds = new DataSet();
+                adp.Fill(_ds, "resourcemanage.employee");
+                dataGrid_manageresources.DataContext = _ds;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

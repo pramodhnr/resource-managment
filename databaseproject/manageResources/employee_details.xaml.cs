@@ -74,6 +74,7 @@ namespace databaseproject
         private void button_manageresources_Click(object sender, RoutedEventArgs e)
         {
             Window_manageResources _mr = new Window_manageResources();
+            _mr.bindToEmployeeTable();
             _mr.ShowDialog();
         }
 
@@ -125,7 +126,7 @@ namespace databaseproject
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
                     conn.Open();
-                    MySqlCommand deleteGroup = new MySqlCommand("DELETE FROM resourcemanage.groups WHERE dept_name = '" + _group + "'", conn);
+                    MySqlCommand deleteGroup = new MySqlCommand("DELETE FROM resourcemanage.groups WHERE group_name = '" + _group + "'", conn);
                     reader = deleteGroup.ExecuteReader();
                    // utilities._emp.comboBox_project.Items.Remove(_group);
                     comboBox_group.Items.Remove(_group);
@@ -157,7 +158,7 @@ namespace databaseproject
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
                     conn.Open();
-                    MySqlCommand deleteTeam = new MySqlCommand("DELETE FROM resourcemanage.team WHERE dept_name = '" + _team + "'", conn);
+                    MySqlCommand deleteTeam = new MySqlCommand("DELETE FROM resourcemanage.team WHERE team_name = '" + _team + "'", conn);
                     reader = deleteTeam.ExecuteReader();
                    // utilities._emp.comboBox_project.Items.Remove(_team);
                     comboBox_team.Items.Remove(_team);
@@ -189,7 +190,7 @@ namespace databaseproject
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
                     conn.Open();
-                    MySqlCommand deleteProject = new MySqlCommand("DELETE FROM resourcemanage.project WHERE dept_name = '" + _project + "'", conn);
+                    MySqlCommand deleteProject = new MySqlCommand("DELETE FROM resourcemanage.project WHERE project_name = '" + _project + "'", conn);
                     reader = deleteProject.ExecuteReader();
                     //utilities._emp.comboBox_project.Items.Remove(_project);
                     comboBox_project.Items.Remove(_project);

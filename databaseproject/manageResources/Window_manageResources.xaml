@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Window_manageResources" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="504" d:DesignWidth="752" SizeToContent="WidthAndHeight" Name="window_manageresources">
     <Grid>
-        <DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" Margin="93,47,0,0" Name="dataGrid_manageresources" VerticalAlignment="Top" Width="547">
+        <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=employee}" Height="200" HorizontalAlignment="Left" Margin="93,47,0,0" Name="dataGrid_manageresources" VerticalAlignment="Top" Width="547">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Select" Width="Auto" />
-                <DataGridTextColumn Header="Name" Width="200" />
-                <DataGridTextColumn Header="Email id" Width="250" />
-                <DataGridTextColumn Header="Loading" />
+                <DataGridTextColumn Binding="{Binding Path=employee.emp_name}" Header="Name" Width="200" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=resourcemanage.employee.email_id}" Header="Email id" Width="250" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=loading}" Header="Loading" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Add resource" Height="23" HorizontalAlignment="Right" Margin="0,277,203,0" Name="button_addResource" VerticalAlignment="Top" Width="88" />
