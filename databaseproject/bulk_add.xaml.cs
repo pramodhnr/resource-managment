@@ -11,13 +11,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace databaseproject
 {
     /// <summary>
     /// Interaction logic for bulk_add.xaml
     /// </summary>
-    
+
+   
+
+
     public partial class bulk_add : Window
     {
         
@@ -26,41 +30,53 @@ namespace databaseproject
             InitializeComponent();
             
         }
-        public IEnumerable<Person> ReadCSV(string fileName)
+        public List<Person> ReadCSV(string fileName)
         {
 
-            //FileStream fs = new FileStream(fileName, FileMode.Open());
-            string[] lines = File.ReadAllLines(fileName);
-
-
-            // lines.Select allows me to project each line as a Person. 
-            // This will give me an IEnumerable<Person> back.
-            return lines.Select(line =>
+            var reader = new StreamReader(File.OpenRead(fileName));
+            List<Person> listA = new List<Person>();
+            
+            while (!reader.EndOfStream)
             {
-                string[] data = line.Split(';');
-                // We return a person with the data in order.
-                return new Person(data[0], data[1]);
-            });
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                Person p = new Person(values[0], values[1]);
+                listA.Add(p);
+                
+            }
+            return listA;
+            
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            utilities util = new utilities();
+            MySqlConnection conn = util.openConnection();
+            conn.Open();
             var filepicker = new System.Windows.Forms.OpenFileDialog();
             var result = filepicker.ShowDialog();
             var filename = filepicker.FileName.ToString();
             filepath.Text = filename;
             filepath.ToolTip = filename;
-            IEnumerable<Person> person = ReadCSV(filename);
-            IEnumerator<Person> values=  person.GetEnumerator();
-            //values.Reset();
-            MessageBox.Show(values.Current.Username);
-            values.MoveNext();
-            MessageBox.Show(values.Current.Username);
-
-           /* foreach (Person p in values)
+            List<Person> person = ReadCSV(filename);
+            
+            foreach (Person p in person)
             {
-                MessageBox.Show(p.Username, p.email);
-            }*/
+                try
+                {
+                    MySqlCommand comm = new MySqlCommand("insert into resourcemanage.employee(emp_name,email_id) values('" + p.Username + "','" + p.email + "')", conn);
+                    MySqlDataReader reader;
+                    reader = comm.ExecuteReader();
+                    reader.Read();
+                    reader.Close();
+                    MessageBox.Show("Upload succeeded");
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+
+            }
         }
     }
 
