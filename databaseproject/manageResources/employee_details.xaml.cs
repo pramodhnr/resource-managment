@@ -73,8 +73,9 @@ namespace databaseproject
 
         private void button_manageresources_Click(object sender, RoutedEventArgs e)
         {
+            
             Window_manageResources _mr = new Window_manageResources();
-            _mr.bindToEmployeeTable();
+            this.Close();
             _mr.ShowDialog();
         }
 
@@ -128,10 +129,9 @@ namespace databaseproject
                     conn.Open();
                     MySqlCommand deleteGroup = new MySqlCommand("DELETE FROM resourcemanage.groups WHERE group_name = '" + _group + "'", conn);
                     reader = deleteGroup.ExecuteReader();
-                   // utilities._emp.comboBox_project.Items.Remove(_group);
                     comboBox_group.Items.Remove(_group);
                     reader.Close();
-                    MessageBox.Show("Department " + _group + " is successfully deleted");
+                    MessageBox.Show("Group " + _group + " is successfully deleted");
                     conn.Close();
                 }
                 else

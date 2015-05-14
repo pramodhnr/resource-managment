@@ -154,10 +154,10 @@ namespace databaseproject
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             utilities _util = new utilities();
-            //employee_details _emp = new employee_details();
             _util.populate_comboboxes();
-
+            this.Close();
             utilities._emp.ShowDialog();
+
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)

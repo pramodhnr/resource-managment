@@ -69,7 +69,6 @@ namespace databaseproject
                     reader = comm.ExecuteReader();
                     reader.Read();
                     reader.Close();
-                    MessageBox.Show("Upload succeeded");
                 }
                 catch (Exception e1)
                 {
@@ -77,6 +76,8 @@ namespace databaseproject
                 }
 
             }
+            MessageBox.Show("Upload succeeded");
+
         }
     }
 
