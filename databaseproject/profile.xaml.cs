@@ -37,6 +37,8 @@ namespace databaseproject
             profile_email_value = profile_email;
             profile_work_hours_value = profile_work_hours;
 
+            manager_textbox.TextChanged += new TextChangedEventHandler(manager_textchange);
+
             session_username = username;
             ComboBox profile_resources = comboBox_profile_resources;
             utilities util = new utilities();
@@ -176,6 +178,66 @@ namespace databaseproject
         }
 
         private void button9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void manager_textchange(object sender, TextChangedEventArgs e)
+        {
+            
+            string text = manager_textbox.Text;
+            List<string> autolist = new List<String>();
+            autolist.Clear();
+
+            utilities util = new utilities();
+            MySqlConnection conn = util.openConnection();
+            conn.Open();
+            MySqlDataReader reader;
+            MySqlCommand comm = new MySqlCommand("select name from resourcemanage.login where name like '%" + text + "%';", conn);
+            reader = comm.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader[0].ToString() != null)
+                    autolist.Add(reader[0].ToString());
+
+            }
+            if (autolist.Count > 0)
+            {
+                autocomplete_manager.ItemsSource = autolist;
+                autocomplete_manager.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                autocomplete_manager.ItemsSource = null;
+                autocomplete_manager.Visibility = Visibility.Hidden;
+            }
+        
+
+        }
+        private void autocomplete_manager_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (autocomplete_manager.ItemsSource != null)
+            {
+                autocomplete_manager.Visibility = Visibility.Collapsed;
+                manager_textbox.TextChanged -= new TextChangedEventHandler(manager_textchange);
+                if (autocomplete_manager.SelectedIndex != -1)
+                {
+                    manager_textbox.Text = autocomplete_manager.SelectedItem.ToString();
+                }
+                manager_textbox.TextChanged +=new TextChangedEventHandler(manager_textchange);
+            }
+        }
+
+        private void button10_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, RoutedEventArgs e)
         {
 
         }
