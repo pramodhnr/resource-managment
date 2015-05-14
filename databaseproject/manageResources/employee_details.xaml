@@ -1,8 +1,8 @@
 ﻿<Window x:Class="databaseproject.employee_details"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="employee_details" Height="356" Width="504" >
-    <Grid IsManipulationEnabled="True">
+        Title="employee_details" Height="356" Width="504" WindowStartupLocation="CenterScreen">
+    <Grid IsManipulationEnabled="True" Background="#FF90D4FF">
         <StackPanel Height="160" HorizontalAlignment="Right" Margin="0,86,370,0" Name="stackPanel_labels" VerticalAlignment="Top" Width="100">
             <Label Content="Department" Height="40" Name="label_department" />
             <Label Content="Group" Height="40" Name="label_group" />

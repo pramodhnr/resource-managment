@@ -21,24 +21,30 @@ namespace databaseproject
     /// </summary>
     public partial class Window_manageResources : Window
     {
+        public static int numberofemployees=0;
         public Window_manageResources()
         {
             InitializeComponent();
+            bindToEmployeeTable();
         }
         public void bindToEmployeeTable()
         {
             utilities _util = new utilities();
+            DataTable _dt = new DataTable();
             MySqlConnection conn;
+            string query = "select emp_name,project_id,loading,email_id from resourcemanage.employee";
             try
             {
                 _util.openConnection();
                 conn = _util.openConnection();
                 conn.Open();
-                MySqlCommand fetchEmpDetails = new MySqlCommand("select emp_name,project_id,loading,email_id from resourcemanage.employee", conn);
-                MySqlDataAdapter adp = new MySqlDataAdapter(fetchEmpDetails);
-                DataSet _ds = new DataSet();
-                adp.Fill(_ds, "resourcemanage.employee");
-                dataGrid_manageresources.DataContext = _ds;
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(_dt);
+                    dataGrid_manageresources.ItemsSource = _dt.DefaultView;
+                    numberofemployees = dataGrid_manageresources.Items.Count;
+                }
                 conn.Close();
             }
             catch (Exception ex)
@@ -46,6 +52,12 @@ namespace databaseproject
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void button_addResource_Click(object sender, RoutedEventArgs e)
+        {
+           
+
         }
     }
 }
