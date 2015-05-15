@@ -279,6 +279,12 @@ namespace databaseproject {
             return;
             case 7:
             this.profile_work_hours = ((System.Windows.Controls.TextBox)(target));
+            
+            #line 12 "..\..\..\profile.xaml"
+            this.profile_work_hours.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.profile_work_hours_TextChanged);
+            
+            #line default
+            #line hidden
             return;
             case 8:
             this.profile_change_password = ((System.Windows.Controls.Button)(target));

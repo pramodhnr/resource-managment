@@ -122,16 +122,24 @@ namespace databaseproject
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             profile_name.IsReadOnly = true;
-            this.Visibility = System.Windows.Visibility.Hidden;
+            button4.Visibility = System.Windows.Visibility.Hidden;
             button5.Visibility = System.Windows.Visibility.Hidden;
             button1.Visibility = System.Windows.Visibility.Visible;
-            utilities util = new utilities();
-            MySqlConnection conn = util.openConnection();
-            MySqlDataReader reader;
-            MySqlCommand comm = new MySqlCommand("update  ",conn);
-            reader = comm.ExecuteReader();
-            reader.Read();
 
+            try
+            {
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                MySqlDataReader reader;
+                MySqlCommand comm = new MySqlCommand("update resourcemanage.login set name = '" + profile_name.Text + "' where name = '"+ comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
+                reader = comm.ExecuteReader();
+                reader.Read();
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -154,16 +162,39 @@ namespace databaseproject
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-
+            button3.Visibility = Visibility.Hidden;
+            button8.Visibility = Visibility.Visible;
+            button9.Visibility = Visibility.Visible;
+            profile_work_hours.IsReadOnly = false;
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
+            profile_email.IsReadOnly = true;
+            button6.Visibility = Visibility.Hidden;
+            button7.Visibility = Visibility.Hidden;
+            button2.Visibility = Visibility.Visible;
+            try
+            {
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                MySqlDataReader reader;
+                MySqlCommand comm = new MySqlCommand("update resourcemanage.login set user_email = '" + profile_email.Text + "' where name = '" + comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
+                reader = comm.ExecuteReader();
+                reader.Read();
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void button5_Click(object sender, RoutedEventArgs e)
         {
+            profile_name.IsReadOnly = true;
+            profile_name.Text = comboBox_profile_resources.SelectedItem.ToString();
 
         }
 
@@ -241,6 +272,8 @@ namespace databaseproject
         {
 
         }
+
+        
         
     }
 }
