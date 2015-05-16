@@ -64,12 +64,13 @@ namespace databaseproject
                         profile_resources.Items.Add(reader2[0].ToString());
                     }
                     reader2.Close();
+                    conn.Close();
 
                 }
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+                MessageBox.Show(e1.Message + "e1");
                 Console.WriteLine(e1.StackTrace);
             }
         }
@@ -84,7 +85,7 @@ namespace databaseproject
             reader = select_resource.ExecuteReader();
             reader.Read();
             profile_name_value.Text = reader[1].ToString();
-            profile_email_value.Text = reader[3].ToString();
+            profile_email_value.Text = reader[2].ToString();
             reader.Close();
             conn.Close();
 
@@ -130,15 +131,17 @@ namespace databaseproject
             {
                 utilities util = new utilities();
                 MySqlConnection conn = util.openConnection();
+                conn.Open();
                 MySqlDataReader reader;
                 MySqlCommand comm = new MySqlCommand("update resourcemanage.login set name = '" + profile_name.Text + "' where name = '"+ comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
                 reader = comm.ExecuteReader();
                 reader.Read();
                 reader.Close();
+                conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "ex");
             }
         }
 
@@ -178,11 +181,13 @@ namespace databaseproject
             {
                 utilities util = new utilities();
                 MySqlConnection conn = util.openConnection();
+                conn.Open();
                 MySqlDataReader reader;
-                MySqlCommand comm = new MySqlCommand("update resourcemanage.login set user_email = '" + profile_email.Text + "' where name = '" + comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
+                MySqlCommand comm = new MySqlCommand("update resourcemanage.login set email = '" + profile_email.Text + "' where name = '" + comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
                 reader = comm.ExecuteReader();
                 reader.Read();
                 reader.Close();
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -260,11 +265,40 @@ namespace databaseproject
 
         private void button10_Click(object sender, RoutedEventArgs e)
         {
-
+            manager_textbox.IsReadOnly = false;
+            button10.Visibility = Visibility.Hidden;
+            button11.Visibility = Visibility.Visible;
+            button12.Visibility = Visibility.Visible;
         }
 
         private void button11_Click(object sender, RoutedEventArgs e)
         {
+            button11.Visibility = Visibility.Hidden;
+            button12.Visibility = Visibility.Hidden;
+            button10.Visibility = Visibility.Visible;
+            manager_textbox.IsReadOnly = true;
+            try
+            {
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                conn.Open();
+                MySqlDataReader reader;
+                MySqlCommand fetch_managerid = new MySqlCommand(" select manager_id from resourcemanage.login where name='" + manager_textbox.Text + "';", conn);
+                reader = fetch_managerid.ExecuteReader();
+                reader.Read();
+                string managerid = reader[0].ToString();
+                reader.Close();
+                
+                MySqlCommand comm = new MySqlCommand("update resourcemanage.login set manager_id = '" + managerid + "' where name = '" + comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
+                reader = comm.ExecuteReader();
+                reader.Read();
+                reader.Close();
+                conn.Close();
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show(ex1.Message + "ex1");
+            }
 
         }
 
