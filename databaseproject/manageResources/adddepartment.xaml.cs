@@ -42,6 +42,7 @@ namespace databaseproject
                     MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.department(dept_name) values ('" + _deptName + "');", conn);
                     reader = insertnew.ExecuteReader();
                     utilities._emp.comboBox_department.Items.Add(_deptName);
+                    utilities._emp.comboBox_department.SelectedItem = _deptName;
                     MessageBox.Show("Department " + _deptName + " is successfully added");
                     this.Close();
                     conn.Close();

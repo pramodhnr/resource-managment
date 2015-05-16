@@ -35,7 +35,8 @@ namespace databaseproject
 
         private void button10_Click(object sender, RoutedEventArgs e)
         {
-            Window_addGroup _addGroup = new Window_addGroup();
+            string _deptName = comboBox_department.SelectedItem.ToString();
+            Window_addGroup _addGroup = new Window_addGroup(_deptName);
             _addGroup.ShowDialog();
         }
 

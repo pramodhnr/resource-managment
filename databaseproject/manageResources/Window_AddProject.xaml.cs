@@ -42,6 +42,7 @@ namespace databaseproject.manageResources
                     MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.project(project_name) values ('" + _projectName + "');", conn);
                     reader = insertnew.ExecuteReader();
                     utilities._emp.comboBox_project.Items.Add(_projectName);
+                    utilities._emp.comboBox_project.SelectedItem = _projectName;
                     MessageBox.Show("Project " + _projectName + " is successfully added");
                     this.Close();
                     conn.Close();

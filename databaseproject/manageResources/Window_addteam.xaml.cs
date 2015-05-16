@@ -42,7 +42,7 @@ namespace databaseproject.manageResources
                     MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.team(team_name) values ('" + _teamName + "');", conn);
                     reader = insertnew.ExecuteReader();
                     utilities._emp.comboBox_team.Items.Add(_teamName);
-                    
+                    utilities._emp.comboBox_team.SelectedItem = _teamName;
                     MessageBox.Show("Team " + _teamName + " is successfully added");
                     this.Close();
                     conn.Close();

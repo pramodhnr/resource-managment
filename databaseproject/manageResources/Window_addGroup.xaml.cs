@@ -22,13 +22,19 @@ namespace databaseproject
     {
         #region variables
         string _groupName;
+        string _deptName;
+        int _dept_id;
         MySqlDataReader reader;
         #endregion variables
         public Window_addGroup()
         {
             InitializeComponent();
         }
-
+        public Window_addGroup(string deptName)
+        {
+            _deptName=deptName;
+            InitializeComponent();
+        }
         private void button_ok_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -39,9 +45,13 @@ namespace databaseproject
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
                     conn.Open();
-                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.groups(group_name) values ('" + _groupName + "');", conn);
+                    MySqlCommand getDpetName = new MySqlCommand("select id from resourcemanage.department where dept_name='" + _deptName + "'", conn);
+                    
+                    _dept_id =Convert.ToInt32(getDpetName.ExecuteScalar());
+                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.groups(group_name,dept_id) values ('" + _groupName + "','"+_dept_id+"');", conn);
                     reader = insertnew.ExecuteReader();
                     utilities._emp.comboBox_group.Items.Add(_groupName);
+                    utilities._emp.comboBox_group.SelectedItem = _groupName;
                     MessageBox.Show("Group "+ _groupName+" is successfully added");
                     this.Close();
                     conn.Close();
