@@ -9,7 +9,7 @@
         <Label Content="Work Hours" Height="22" HorizontalAlignment="Left" Margin="44,156,0,0" Name="label3" VerticalAlignment="Top" Width="100" />
         <TextBox Height="19" HorizontalAlignment="Left" Margin="176,77,0,0" Name="profile_name" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
         <TextBox Height="19" HorizontalAlignment="Left" Margin="176,120,0,0" Name="profile_email" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
-        <TextBox Height="19" HorizontalAlignment="Left" Margin="176,156,0,0" Name="profile_work_hours" VerticalAlignment="Top" Width="127" IsReadOnly="True" />
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="176,156,0,0" Name="profile_work_hours" VerticalAlignment="Top" Width="127" IsReadOnly="True" TextChanged="profile_work_hours_TextChanged" />
         <Button Content="Change Password" Height="25" HorizontalAlignment="Left" Margin="480,5,0,0" Name="profile_change_password" VerticalAlignment="Top" Width="117" Click="profile_change_password_Click" />
         <Button Height="16" HorizontalAlignment="Left" Margin="310,76,0,0" Name="button1" VerticalAlignment="Top" Width="16" Click="button1_Click" />
         <Button Height="16" HorizontalAlignment="Left" Margin="310,120,0,0" Name="button2" VerticalAlignment="Top" Width="16" Click="button2_Click" />
@@ -20,5 +20,11 @@
         <Button Height="16" HorizontalAlignment="Left" Margin="366,120,0,0" Name="button7" VerticalAlignment="Top" Width="16" Visibility="Hidden" Click="button7_Click" />
         <Button Height="16" Margin="344,159,0,0" Name="button8" VerticalAlignment="Top" Click="button8_Click" HorizontalAlignment="Left" Width="16" Visibility="Hidden" />
         <Button Height="16" HorizontalAlignment="Left" Margin="366,159,0,0" Name="button9" VerticalAlignment="Top" Width="16" Click="button9_Click" Visibility="Hidden" />
+        <TextBlock Height="19" HorizontalAlignment="Left" Margin="44,184,0,0" Name="textBlock1" Text="Manager" VerticalAlignment="Top" Width="100" />
+        <TextBox Height="19" HorizontalAlignment="Left" IsReadOnly="True" Margin="176,184,0,0" Name="manager_textbox" VerticalAlignment="Top" Width="127" />
+        <ListBox Height="61" HorizontalAlignment="Left" Margin="176,203,0,0" Name="autocomplete_manager" VerticalAlignment="Top" Width="126" Visibility="Collapsed" SelectionChanged="autocomplete_manager_SelectionChanged" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="310,184,0,0" Name="button10" VerticalAlignment="Top" Width="16" Click="button10_Click" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="344,184,0,0" Name="button11" VerticalAlignment="Top" Width="16" Click="button11_Click" />
+        <Button Height="16" HorizontalAlignment="Left" Margin="366,184,0,0" Name="button12" VerticalAlignment="Top" Width="16" Click="button12_Click" />
     </Grid>
 </Window>

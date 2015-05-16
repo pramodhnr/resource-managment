@@ -37,6 +37,8 @@ namespace databaseproject
             profile_email_value = profile_email;
             profile_work_hours_value = profile_work_hours;
 
+            manager_textbox.TextChanged += new TextChangedEventHandler(manager_textchange);
+
             session_username = username;
             ComboBox profile_resources = comboBox_profile_resources;
             utilities util = new utilities();
@@ -120,16 +122,24 @@ namespace databaseproject
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             profile_name.IsReadOnly = true;
-            this.Visibility = System.Windows.Visibility.Hidden;
+            button4.Visibility = System.Windows.Visibility.Hidden;
             button5.Visibility = System.Windows.Visibility.Hidden;
             button1.Visibility = System.Windows.Visibility.Visible;
-            utilities util = new utilities();
-            MySqlConnection conn = util.openConnection();
-            MySqlDataReader reader;
-            MySqlCommand comm = new MySqlCommand("update  ",conn);
-            reader = comm.ExecuteReader();
-            reader.Read();
 
+            try
+            {
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                MySqlDataReader reader;
+                MySqlCommand comm = new MySqlCommand("update resourcemanage.login set name = '" + profile_name.Text + "' where name = '"+ comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
+                reader = comm.ExecuteReader();
+                reader.Read();
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -152,16 +162,39 @@ namespace databaseproject
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-
+            button3.Visibility = Visibility.Hidden;
+            button8.Visibility = Visibility.Visible;
+            button9.Visibility = Visibility.Visible;
+            profile_work_hours.IsReadOnly = false;
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
+            profile_email.IsReadOnly = true;
+            button6.Visibility = Visibility.Hidden;
+            button7.Visibility = Visibility.Hidden;
+            button2.Visibility = Visibility.Visible;
+            try
+            {
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                MySqlDataReader reader;
+                MySqlCommand comm = new MySqlCommand("update resourcemanage.login set user_email = '" + profile_email.Text + "' where name = '" + comboBox_profile_resources.SelectedItem.ToString() + "' ", conn);
+                reader = comm.ExecuteReader();
+                reader.Read();
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void button5_Click(object sender, RoutedEventArgs e)
         {
+            profile_name.IsReadOnly = true;
+            profile_name.Text = comboBox_profile_resources.SelectedItem.ToString();
 
         }
 
@@ -179,6 +212,68 @@ namespace databaseproject
         {
 
         }
+        private void manager_textchange(object sender, TextChangedEventArgs e)
+        {
+            
+            string text = manager_textbox.Text;
+            List<string> autolist = new List<String>();
+            autolist.Clear();
+
+            utilities util = new utilities();
+            MySqlConnection conn = util.openConnection();
+            conn.Open();
+            MySqlDataReader reader;
+            MySqlCommand comm = new MySqlCommand("select name from resourcemanage.login where name like '%" + text + "%';", conn);
+            reader = comm.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader[0].ToString() != null)
+                    autolist.Add(reader[0].ToString());
+
+            }
+            if (autolist.Count > 0)
+            {
+                autocomplete_manager.ItemsSource = autolist;
+                autocomplete_manager.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                autocomplete_manager.ItemsSource = null;
+                autocomplete_manager.Visibility = Visibility.Hidden;
+            }
+        
+
+        }
+        private void autocomplete_manager_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (autocomplete_manager.ItemsSource != null)
+            {
+                autocomplete_manager.Visibility = Visibility.Collapsed;
+                manager_textbox.TextChanged -= new TextChangedEventHandler(manager_textchange);
+                if (autocomplete_manager.SelectedIndex != -1)
+                {
+                    manager_textbox.Text = autocomplete_manager.SelectedItem.ToString();
+                }
+                manager_textbox.TextChanged +=new TextChangedEventHandler(manager_textchange);
+            }
+        }
+
+        private void button10_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
         
     }
 }
