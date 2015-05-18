@@ -94,6 +94,7 @@ namespace databaseproject
             profile_email_value.Text =current_email= reader[2].ToString();
             reader.Close();
             reader1 = select_manager.ExecuteReader();
+            reader1.Read();
             manager_textbox.Text =current_manager= reader1[0].ToString();
             reader1.Close();
             conn.Close();
@@ -235,30 +236,38 @@ namespace databaseproject
             string text = manager_textbox.Text;
             List<string> autolist = new List<String>();
             autolist.Clear();
+            if (manager_textbox.IsReadOnly == false)
+            {
+                try
+                {
+                    utilities util = new utilities();
+                    MySqlConnection conn = util.openConnection();
+                    conn.Open();
+                    MySqlDataReader reader;
+                    MySqlCommand comm = new MySqlCommand("select name from resourcemanage.login where name like '%" + text + "%';", conn);
+                    reader = comm.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (reader[0].ToString() != null)
+                            autolist.Add(reader[0].ToString());
 
-            utilities util = new utilities();
-            MySqlConnection conn = util.openConnection();
-            conn.Open();
-            MySqlDataReader reader;
-            MySqlCommand comm = new MySqlCommand("select name from resourcemanage.login where name like '%" + text + "%';", conn);
-            reader = comm.ExecuteReader();
-            while (reader.Read())
-            {
-                if (reader[0].ToString() != null)
-                    autolist.Add(reader[0].ToString());
-
+                    }
+                    if (autolist.Count > 0)
+                    {
+                        autocomplete_manager.ItemsSource = autolist;
+                        autocomplete_manager.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        autocomplete_manager.ItemsSource = null;
+                        autocomplete_manager.Visibility = Visibility.Hidden;
+                    }
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.Message);
+                }
             }
-            if (autolist.Count > 0)
-            {
-                autocomplete_manager.ItemsSource = autolist;
-                autocomplete_manager.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                autocomplete_manager.ItemsSource = null;
-                autocomplete_manager.Visibility = Visibility.Hidden;
-            }
-        
 
         }
         private void autocomplete_manager_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -318,6 +327,7 @@ namespace databaseproject
         {
             manager_textbox.IsReadOnly = true;
             manager_textbox.Text = current_manager;
+            autocomplete_manager.Visibility = Visibility.Collapsed;
         }
 
         
