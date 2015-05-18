@@ -23,6 +23,9 @@ namespace databaseproject
         TextBox profile_name_value;
         TextBox profile_email_value;
         TextBox profile_work_hours_value;
+        string current_name;
+        string current_email;
+        string current_manager;
 
         private string session_username;
         public profile()
@@ -81,12 +84,18 @@ namespace databaseproject
             MySqlConnection conn = util.openConnection();
             conn.Open();
             MySqlCommand select_resource = new MySqlCommand("select * from resourcemanage.login where name ='" + comboBox_profile_resources.SelectedItem.ToString() + "';", conn);
-            MySqlDataReader reader ; 
+            MySqlDataReader reader ;
+            MySqlDataReader reader1;
             reader = select_resource.ExecuteReader();
             reader.Read();
-            profile_name_value.Text = reader[1].ToString();
-            profile_email_value.Text = reader[2].ToString();
+            MySqlCommand select_manager = new MySqlCommand("select name from resourcemanage.login where id='" + reader[0].ToString() + "'", conn);
+
+            profile_name_value.Text =current_name= reader[1].ToString();
+            profile_email_value.Text =current_email= reader[2].ToString();
             reader.Close();
+            reader1 = select_manager.ExecuteReader();
+            manager_textbox.Text =current_manager= reader1[0].ToString();
+            reader1.Close();
             conn.Close();
 
         }
@@ -138,6 +147,7 @@ namespace databaseproject
                 reader.Read();
                 reader.Close();
                 conn.Close();
+                current_name = profile_name.Text;
             }
             catch (Exception ex)
             {
@@ -188,6 +198,7 @@ namespace databaseproject
                 reader.Read();
                 reader.Close();
                 conn.Close();
+                current_email = profile_email.Text;
             }
             catch (Exception ex)
             {
@@ -199,13 +210,14 @@ namespace databaseproject
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             profile_name.IsReadOnly = true;
-            profile_name.Text = comboBox_profile_resources.SelectedItem.ToString();
+            profile_name.Text = current_name;
 
         }
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
-
+            profile_email.IsReadOnly = true;
+            profile_email.Text = current_email;
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
@@ -304,7 +316,8 @@ namespace databaseproject
 
         private void button12_Click(object sender, RoutedEventArgs e)
         {
-
+            manager_textbox.IsReadOnly = true;
+            manager_textbox.Text = current_manager;
         }
 
         
