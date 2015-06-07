@@ -35,20 +35,20 @@ namespace databaseproject
 
         private void button10_Click(object sender, RoutedEventArgs e)
         {
-            string _deptName = comboBox_department.SelectedItem.ToString();
-            Window_addGroup _addGroup = new Window_addGroup(_deptName);
+            
+            Window_addGroup _addGroup = new Window_addGroup(comboBox_department.SelectedItem.ToString());
             _addGroup.ShowDialog();
         }
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
-            Window_addteam _addTeam = new Window_addteam();
+            Window_addteam _addTeam = new Window_addteam(comboBox_group.SelectedItem.ToString());
             _addTeam.ShowDialog();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            Window_AddProject _addProject = new Window_AddProject();
+            Window_AddProject _addProject = new Window_AddProject(comboBox_group.SelectedItem.ToString(),comboBox_team.SelectedItem.ToString());
             _addProject.ShowDialog();
         }
 
