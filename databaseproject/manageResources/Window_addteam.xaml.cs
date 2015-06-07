@@ -22,6 +22,7 @@ namespace databaseproject.manageResources
     {
         #region variables
         string _teamName;
+        string _groupName;
         MySqlDataReader reader;
         #endregion variables
         public Window_addteam()
@@ -29,6 +30,11 @@ namespace databaseproject.manageResources
             InitializeComponent();
         }
 
+        public Window_addteam(string group)
+        {
+            _groupName = group;
+            InitializeComponent();
+        }
         private void button_ok_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -39,7 +45,10 @@ namespace databaseproject.manageResources
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
                     conn.Open();
-                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.team(team_name) values ('" + _teamName + "');", conn);
+                    MySqlCommand getgroupName = new MySqlCommand("select id from resourcemanage.groups where group_name='" + _groupName + "'", conn);
+
+                    int _group_id = Convert.ToInt32(getgroupName.ExecuteScalar());
+                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.team(team_name,group_id) values ('" + _teamName + "','"+_group_id+"');", conn);
                     reader = insertnew.ExecuteReader();
                     utilities._emp.comboBox_team.Items.Add(_teamName);
                     utilities._emp.comboBox_team.SelectedItem = _teamName;
@@ -47,6 +56,7 @@ namespace databaseproject.manageResources
                     this.Close();
                     conn.Close();
                 }
+                
                 else
                 {
                     MessageBox.Show("Add the team name and press ok");

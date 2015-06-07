@@ -22,6 +22,8 @@ namespace databaseproject.manageResources
     {
         #region variables
         string _projectName;
+        string _groupName;
+        string _teamName;
         MySqlDataReader reader;
         #endregion variables
         public Window_AddProject()
@@ -29,6 +31,12 @@ namespace databaseproject.manageResources
             InitializeComponent();
         }
 
+        public Window_AddProject(string group, string team)
+        {
+            _groupName = group;
+            _teamName = team;
+            InitializeComponent();
+        }
         private void button_ok_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -39,13 +47,21 @@ namespace databaseproject.manageResources
                     utilities util = new utilities();
                     MySqlConnection conn = util.openConnection();
                     conn.Open();
-                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.project(project_name) values ('" + _projectName + "');", conn);
+                    MySqlCommand getgroupName = new MySqlCommand("select id from resourcemanage.groups where group_name='" + _groupName + "'", conn);
+                    MySqlCommand getteamName = new MySqlCommand("select id from resourcemanage.team where team_name='" + _teamName + "'", conn);
+
+                    int _groupid = Convert.ToInt32(getgroupName.ExecuteScalar());
+                    int _teamid = Convert.ToInt32(getteamName.ExecuteScalar());
+
+
+                    MySqlCommand insertnew = new MySqlCommand("insert into resourcemanage.project(project_name,team_id,group_id) values ('" + _projectName + "','" + _teamid + "','" + _groupid + "');", conn);
                     reader = insertnew.ExecuteReader();
                     utilities._emp.comboBox_project.Items.Add(_projectName);
                     utilities._emp.comboBox_project.SelectedItem = _projectName;
                     MessageBox.Show("Project " + _projectName + " is successfully added");
                     this.Close();
                     conn.Close();
+                
                 }
                 else
                 {

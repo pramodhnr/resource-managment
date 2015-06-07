@@ -82,3 +82,36 @@ C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\De
 C:\Users\INSHBHA2\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.g.cs
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.baml
 C:\Users\Pramodh PC\Documents\GitHub\resource-managment\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.exe
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.pdb
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\bin\Debug\databaseproject.exe
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\bin\Debug\databaseproject.pdb
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\bin\Debug\sql1.pdb
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.csprojResolveAssemblyReference.cache
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\adddepartment.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\bulk_add.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\employee_details.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\MainWindow.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_AddProject.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_addteam.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\profile.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\signup_form.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\changePassword.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_addGroup.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\adddepartment.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\bulk_add.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\employee_details.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\MainWindow.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_AddProject.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_addteam.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\profile.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\signup_form.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\changePassword.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_addGroup.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\manageResources\Window_manageResources.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\App.g.cs
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject_MarkupCompile.cache
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.g.resources
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.Properties.Resources.resources
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.csproj.GenerateResource.Cache

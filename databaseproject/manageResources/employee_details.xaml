@@ -17,7 +17,7 @@
         </StackPanel>
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,87,0,0" Name="button_adddepartment" VerticalAlignment="Top" Width="18" Click="button1_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,208" Name="button_viewdpeartment" VerticalAlignment="Bottom" Width="32" />
-        <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,207,0,0" Name="button_addproject" VerticalAlignment="Top" Width="18" Click="button2_Click" />
+        <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,0,0,87" Name="button_addproject" VerticalAlignment="Bottom" Width="18" Click="button2_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,88" Name="button_viewproject" VerticalAlignment="Bottom" Width="32" />
         <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="333,167,0,0" Name="button_addteam" VerticalAlignment="Top" Width="18" Click="button7_Click" />
         <Button Content="view" Height="23" HorizontalAlignment="Left" Margin="365,0,0,128" Name="button_viewteam" VerticalAlignment="Bottom" Width="32" />
