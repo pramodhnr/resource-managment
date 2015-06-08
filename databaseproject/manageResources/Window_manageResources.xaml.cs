@@ -59,5 +59,27 @@ namespace databaseproject
            
 
         }
+
+        private void button_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            List<int> indices = new List<int>();
+            foreach (DataRowView item in window_manageresources.dataGrid_manageresources.SelectedItems)
+            {
+                string email = item.Row[3].ToString();
+                utilities util = new utilities();
+                MySqlConnection conn = util.openConnection();
+                conn.Open();
+                MySqlCommand deleteResource = new MySqlCommand("DELETE FROM resourcemanage.employee WHERE email_id = '" + email + "'", conn);
+                MySqlDataReader reader = deleteResource.ExecuteReader();
+                conn.Close();
+                indices.Add(window_manageresources.dataGrid_manageresources.SelectedIndex);
+            }
+            foreach (int index in indices)
+            {
+                DataRowView r = (DataRowView)window_manageresources.dataGrid_manageresources.Items[index];
+                r.Delete();
+            }
+            
+         }
     }
 }

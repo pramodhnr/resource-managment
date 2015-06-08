@@ -1,0 +1,10 @@
+﻿<Window x:Class="databaseproject.choose"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="choose" Height="300" Width="300">
+    <Grid Background="#FF90D4FF">
+        <Button Content="Manage resources" Height="23" HorizontalAlignment="Left" Margin="83,64,0,0" Name="button_manageResources" VerticalAlignment="Top" Width="106" Click="button_manageResources_Click" />
+        <Button Content="Project Managment" Height="23" HorizontalAlignment="Left" Margin="83,210,0,0" Name="button_ResourceMapping" VerticalAlignment="Top" Width="115" />
+        <Button Content="Resource Mapping" Height="23" HorizontalAlignment="Left" Margin="83,137,0,0" Name="button_ProjectManagement" VerticalAlignment="Top" Width="106" />
+    </Grid>
+</Window>

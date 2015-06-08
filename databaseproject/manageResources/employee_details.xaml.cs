@@ -24,6 +24,7 @@ namespace databaseproject
         public employee_details()
         {
             InitializeComponent();
+            populate_comboboxes();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -204,6 +205,71 @@ namespace databaseproject
                     MessageBox.Show("Select the project to be delted");
                     goto l1;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+      
+        public void populate_comboboxes()
+        {
+            utilities util = new utilities();
+            MySqlDataReader reader;
+            MySqlConnection conn = util.openConnection();
+            try
+            {
+                conn.Open();
+                MySqlCommand fetchDeptNames = new MySqlCommand("select dept_name from resourcemanage.department;", conn);
+                reader = fetchDeptNames.ExecuteReader();
+                while (reader.Read())
+                {
+                    this.comboBox_department.Items.Add(reader[0].ToString());
+                }
+                if(this.comboBox_department.Items!=null)
+                {
+                    this.comboBox_department.SelectedItem = this.comboBox_department.Items[0];
+                }
+
+                MySqlCommand fetchGroupNames = new MySqlCommand("select group_name from resourcemanage.groups;", conn);
+                reader.Close();
+                reader = fetchGroupNames.ExecuteReader();
+                while (reader.Read())
+                {
+                    this.comboBox_group.Items.Add(reader[0].ToString());
+                }
+                if (this.comboBox_group.Items != null)
+                {
+                    this.comboBox_group.SelectedItem = this.comboBox_group.Items[0];
+                }
+                reader.Close();
+                
+                MySqlCommand fetchTeamNames = new MySqlCommand("select team_name from resourcemanage.team;", conn);
+                reader = fetchTeamNames.ExecuteReader();
+                while (reader.Read())
+                {
+                    this.comboBox_team.Items.Add(reader[0].ToString());
+                }
+
+                if (this.comboBox_team.Items != null)
+                {
+                    this.comboBox_team.SelectedItem = this.comboBox_team.Items[0];
+                }
+                reader.Close();
+                MySqlCommand fetchProjectNames = new MySqlCommand("select project_name from resourcemanage.project;", conn);
+                reader = fetchProjectNames.ExecuteReader();
+                while (reader.Read())
+                {
+                    this.comboBox_project.Items.Add(reader[0].ToString());
+                }
+
+                if (this.comboBox_project.Items != null)
+                {
+                    this.comboBox_project.SelectedItem = this.comboBox_project.Items[0];
+                }
+                reader.Close();
+                conn.Close();
             }
             catch (Exception ex)
             {

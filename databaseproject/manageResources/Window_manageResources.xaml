@@ -3,17 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Window_manageResources" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="423" d:DesignWidth="724"  Name="window_manageresources" WindowStartupLocation="CenterScreen">
     <Canvas Width="705">
-    <Grid Height="365" Width="668" Canvas.Top="12" Canvas.Left="28" Background="#FF90D4FF">
+    <Grid Height="365" Width="700" Canvas.Top="7" Canvas.Left="0" Background="#FF90D4FF">
         <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=resourcemanage.employee}" Height="200" HorizontalAlignment="Left" Margin="17,49,0,0" Name="dataGrid_manageresources" VerticalAlignment="Top" Width="645">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Header="Select" Width="Auto" />
-                <DataGridTextColumn Binding="{Binding Path=emp_name,Mode=TwoWay}" Header="Name" Width="200" IsReadOnly="False" />
-                <DataGridTextColumn Binding="{Binding Path=email_id}" Header="Email id" Width="250" IsReadOnly="False" />
-                <DataGridTextColumn Binding="{Binding Path=loading}" Header="Loading" IsReadOnly="False" />
+                    <DataGridTextColumn Binding="{Binding Path=emp_name,Mode=TwoWay}" Header="Name" Width="275" IsReadOnly="False" />
+                <DataGridTextColumn Binding="{Binding Path=email_id}" Header="Email id" Width="275" IsReadOnly="False" />
+                <DataGridTextColumn Binding="{Binding Path=loading}" Header="Loading" IsReadOnly="False" MaxWidth="Infinity" Width="100" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Add resource" Height="23" HorizontalAlignment="Right" Margin="0,264,102,0" Name="button_addResource" VerticalAlignment="Top" Width="88" Click="button_addResource_Click" />
-        <Button Content="Delete resource" Height="23" HorizontalAlignment="Left" Margin="572,264,0,0" Name="button_Delete" VerticalAlignment="Top" Width="90" />
+        <Button Content="Add resource" Height="23" HorizontalAlignment="Left" Margin="465,264,0,0" Name="button_addResource" VerticalAlignment="Top" Width="88" Click="button_addResource_Click" />
+        <Button Content="Delete resource" Height="23" HorizontalAlignment="Left" Margin="572,264,0,0" Name="button_Delete" VerticalAlignment="Top" Width="90" Click="button_Delete_Click" />
     </Grid>
     </Canvas>
 </Window>

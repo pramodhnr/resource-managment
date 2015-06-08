@@ -115,3 +115,5 @@ C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject_Mark
 C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.g.resources
 C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.Properties.Resources.resources
 C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\databaseproject.csproj.GenerateResource.Cache
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\choose.baml
+C:\Users\INSHBHA2\Desktop\rmt\databaseproject\obj\x86\Debug\choose.g.cs

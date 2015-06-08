@@ -91,6 +91,10 @@ namespace databaseproject
                 }
                 //utilities.closeConnection();
                 conn.Close();
+                this.Close();
+                choose _choose = new choose();
+                _choose.ShowDialog();
+                
          }
             catch (Exception ex)
             {
@@ -151,14 +155,7 @@ namespace databaseproject
             }
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            utilities _util = new utilities();
-            _util.populate_comboboxes();
-            this.Close();
-            utilities._emp.ShowDialog();
-
-        }
+        
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
